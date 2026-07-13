@@ -29,22 +29,24 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
   try {
     const formData = new URLSearchParams();
 
-formData.append("entry.2005620554", data.name);
-formData.append("entry.1045781291", data.phone);
-formData.append("entry.1065046570", data.classInterested);
+formData.set("entry.2005620554", data.name);
+formData.set("entry.1045781291", data.phone);
+formData.set("entry.1065046570", data.classInterested);
+formData.set("entry.839337160", data.message);
 
-if (data.message) {
-  formData.append("entry.839337160", data.message);
-}
-
-await fetch(
+const response = await fetch(
   "https://docs.google.com/forms/d/e/1FAIpQLSee9B1iWzf8-dj8aFO4ssbht7aDxe0g9x-etcaiCHykLdstAw/formResponse",
   {
     method: "POST",
-    mode: "no-cors",
-    body: formData,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: formData.toString(),
   }
 );
+
+console.log(response.status);
+console.log(await response.text());
 
 setStatus("success");
 form.reset();
