@@ -15,8 +15,8 @@ function handleSubmit() {
   setStatus("loading");
 
   setTimeout(() => {
-    setStatus("success");
     formRef.current?.reset();
+    setStatus("success");
   }, 1000);
 }
   if (status === "success") {
@@ -36,13 +36,16 @@ function handleSubmit() {
       </div>
     );
   }
-<iframe
-  name="hidden_iframe"
-  title="hidden_iframe"
-  style={{ display: "none" }}
-/>
+
   return (
-    <form
+    <>
+    <iframe
+      name="hidden_iframe"
+      title="hidden_iframe"
+      style={{ display: "none" }}
+    />
+
+   <form
   ref={formRef}
   action="https://docs.google.com/forms/d/e/1FAIpQLSee9B1iWzf8-dj8aFO4ssbht7aDxe0g9x-etcaiCHykLdstAw/formResponse"
   method="POST"
@@ -130,5 +133,6 @@ function handleSubmit() {
         {status === "loading" ? "Sending..." : "Send enquiry"}
       </button>
     </form>
-  );
+  </>
+  )
 }
