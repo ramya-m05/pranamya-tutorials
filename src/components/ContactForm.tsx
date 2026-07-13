@@ -10,39 +10,56 @@ export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus("loading");
-    setErrorMsg("");
+async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  setStatus("loading");
+  setErrorMsg("");
 
-    const form = e.currentTarget;
-    const data = {
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      classInterested: (form.elements.namedItem("classInterested") as HTMLSelectElement).value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
-    };
+  const form = e.currentTarget;
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+  const data = {
+    name: (form.elements.namedItem("name") as HTMLInputElement).value,
+    phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+    classInterested: (
+      form.elements.namedItem("classInterested") as HTMLSelectElement
+    ).value,
+    message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+  };
 
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error(body.error || "Something went wrong. Please try again.");
-      }
+  try {
+    const formData = new URLSearchParams();
 
-      setStatus("success");
-      form.reset();
-    } catch (err) {
-      setStatus("error");
-      setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    }
+formData.append("entry.2005620554", data.name);
+formData.append("entry.1045781291", data.phone);
+formData.append("entry.1065046570", data.classInterested);
+
+if (data.message) {
+  formData.append("entry.839337160", data.message);
+}
+
+await fetch(
+  "https://docs.google.com/forms/d/e/1FAIpQLSee9B1iWzf8-dj8aFO4ssbht7aDxe0g9x-etcaiCHykLdstAw/formResponse",
+  {
+    method: "POST",
+    mode: "no-cors",
+    body: formData,
   }
+);
 
+setStatus("success");
+form.reset();
+
+    setStatus("success");
+    form.reset();
+  } catch (err) {
+    setStatus("error");
+    setErrorMsg(
+      err instanceof Error
+        ? err.message
+        : "Something went wrong. Please try again."
+    );
+  }
+}
   if (status === "success") {
     return (
       <div className="flex flex-col items-center text-center gap-3 py-10 px-6 border-2 border-red-700/20 rounded-sm bg-gold-100">
