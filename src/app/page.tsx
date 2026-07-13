@@ -73,7 +73,7 @@ export default function Home() {
         <div className="text-center max-w-2xl mx-auto">
           <RibbonBadge tone="gold">Classes for</RibbonBadge>
           <h2 className="mt-5 font-display font-bold text-3xl sm:text-4xl text-maroon-950">
-            8th Standard through 2nd PUC
+            8th Standard to 2nd PUC
           </h2>
           <p className="mt-4 font-body text-ink-700">
             Every batch runs on the same principle: understand it properly, and the marks
