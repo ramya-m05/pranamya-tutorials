@@ -5,7 +5,7 @@ export const SITE = {
   address: "#637/B, 1st K Block, E Block, Dr. Rajkumar Road, 2nd Stage, Rajajinagar, Bengaluru - 560010",
   phones: ["96865 75508", "96203 20309", "90087 35478"],
   phonesRaw: ["+919686575508", "+919620320309", "+919008735478"],
-  email: "info@pranamyatutorials.in",
+  email: "pranamyatutorials@gmail.com",
   mapQuery: "637/B 1st K Block Dr Rajkumar Road 2nd Stage Rajajinagar Bengaluru 560010",
 };
 
