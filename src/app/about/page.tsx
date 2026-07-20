@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Phone, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import RibbonBadge from "@/components/RibbonBadge";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { SITE } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -95,6 +96,7 @@ export default function AboutPage() {
           >
             Book a free demo
             <ArrowRight size={18} />
+            <WhatsAppButton></WhatsAppButton>
           </Link>
           <a
             href={`tel:${SITE.phonesRaw[0]}`}

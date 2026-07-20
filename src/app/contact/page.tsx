@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { MapPin, Phone, Mail } from "lucide-react";
 import RibbonBadge from "@/components/RibbonBadge";
 import ContactForm from "@/components/ContactForm";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { SITE } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function ContactPage() {
 
   return (
     <>
+   
       <section className="bg-maroon-950 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-5 sm:px-8 text-center">
           <RibbonBadge>Get in touch</RibbonBadge>
@@ -38,6 +40,7 @@ export default function ContactPage() {
             </p>
             <div className="mt-8">
               <ContactForm />
+               <WhatsAppButton></WhatsAppButton>
             </div>
           </div>
 
@@ -102,6 +105,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      
     </>
   );
 }

@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen, Users, Landmark } from "lucide-react";
 import RibbonBadge from "@/components/RibbonBadge";
 import ClassCard from "@/components/ClassCard";
 import { CLASSES, FACTS, SITE } from "@/lib/data";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "Classes | Pranamya Tutorials",
@@ -71,6 +72,7 @@ export default function ClassesPage() {
             >
               Ask us a question
               <ArrowRight size={18} />
+              <WhatsAppButton></WhatsAppButton>
             </Link>
             <a
               href={`tel:${SITE.phonesRaw[0]}`}

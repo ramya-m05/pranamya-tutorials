@@ -3,6 +3,7 @@ import { ArrowRight, Phone, BookOpen, Users, Landmark } from "lucide-react";
 import Sunburst from "@/components/Sunburst";
 import RibbonBadge from "@/components/RibbonBadge";
 import ClassCard from "@/components/ClassCard";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { CLASSES, WHY_US, FACTS, SITE } from "@/lib/data";
 
 const FACT_ICONS = [BookOpen, Users, Landmark];
@@ -149,6 +150,7 @@ export default function Home() {
                 <Phone size={18} />
                 Call us
               </a>
+              <WhatsAppButton></WhatsAppButton>
             </div>
           </div>
         </div>

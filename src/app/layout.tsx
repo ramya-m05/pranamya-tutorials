@@ -3,6 +3,7 @@ import { Fraunces, Work_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -49,6 +50,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <WhatsAppButton></WhatsAppButton>
       </body>
     </html>
   );
