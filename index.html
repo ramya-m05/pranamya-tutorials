@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pranamya Tutorials — Strong Basics. Bright Future. Inspiring Young Minds.</title>
+  <meta name="description" content="Pranamya Tutorials - Top Private Coaching Institute in Rajajinagar, Bengaluru for 8th, 9th, 10th SSLC, 1st PUC & 2nd PUC State Syllabus. Strong Basics. Bright Future.">
+  <meta name="keywords" content="Pranamya Tutorials, Coaching Institute Rajajinagar, SSLC Tuition Bengaluru, 1st PUC Science Commerce, 2nd PUC Board Exam, State Syllabus Tuitions Bengaluru">
+  
+  <!-- Tailwind CSS CDN for Utility Classes -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandRed: '#C8102E',
+            brandRedDark: '#990000',
+            brandGold: '#FFB800',
+            brandSlate: '#0F172A'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Main CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-red-600 selection:text-white pb-0">
+
+  <!-- Top Notification Bar -->
+  <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-red-900/40">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center gap-4 flex-wrap">
+        <span class="inline-flex items-center gap-1.5 text-amber-400 font-semibold">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+          Rajajinagar, Bengaluru - 560010
+        </span>
+        <span class="hidden sm:inline-block text-slate-600">|</span>
+        <span class="hidden sm:inline-flex items-center gap-1.5 hover:text-white transition">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-red-500"></i>
+          pranamyatutorials@gmail.com
+        </span>
+      </div>
+      <div class="flex items-center gap-3 ml-auto">
+        <span class="text-slate-400 font-medium">Call Us:</span>
+        <a href="tel:919686575508" class="font-bold text-amber-400 hover:underline flex items-center gap-1">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+          96865 75508
+        </a>
+        <span class="text-slate-600 hidden md:inline">•</span>
+        <a href="tel:919620320309" class="font-bold text-amber-400 hover:underline hidden md:inline">
+          96203 20309
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Main Navbar -->
+  <header class="sticky top-0 z-50 nav-glass transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo & Name -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full p-0.5 bg-gradient-to-tr from-red-600 via-amber-400 to-red-800 shadow-md group-hover:scale-105 transition-transform duration-300">
+            <img src="assets/images/logo.svg" alt="Pranamya Tutorials Logo" class="w-full h-full object-contain">
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center gap-2">
+              <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 leading-none">
+                PRANAMYA
+              </span>
+              <span class="kannada-text text-xs bg-red-600 text-white px-2 py-0.5 rounded-md font-semibold">
+                ಪ್ರಣಮ್ಯ ಟ್ಯೂಟೋರಿಯಲ್ಸ್
+              </span>
+            </div>
+            <span class="text-xs tracking-widest uppercase font-bold text-red-600 leading-tight">
+              TUTORIALS
+            </span>
+            <span class="hidden lg:block text-[10px] text-slate-500 font-medium">
+              Strong Basics. Bright Future. Inspiring Young Minds.
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm text-slate-700">
+          <a href="#hero" class="hover:text-red-600 transition-colors py-2 border-b-2 border-transparent hover:border-red-600">Home</a>
+          <a href="#classes" class="hover:text-red-600 transition-colors py-2 border-b-2 border-transparent hover:border-red-600">Classes Offered</a>
+          <a href="#why-us" class="hover:text-red-600 transition-colors py-2 border-b-2 border-transparent hover:border-red-600">Why Us</a>
+          <a href="#faculty" class="hover:text-red-600 transition-colors py-2 border-b-2 border-transparent hover:border-red-600">Our Faculty</a>
+          <a href="#enquiry" class="hover:text-red-600 transition-colors py-2 border-b-2 border-transparent hover:border-red-600">Admissions</a>
+        </nav>
+
+        <!-- Header Right CTA Button -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="#enquiry" class="btn-primary text-xs uppercase tracking-wider">
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-400"></i>
+            Enquire Now
+          </a>
+        </div>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="md:hidden p-2 rounded-lg text-slate-700 hover:text-red-600 hover:bg-slate-100 focus:outline-none">
+          <i data-lucide="menu" class="w-7 h-7"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileDrawer" class="hidden md:hidden bg-slate-900/95 backdrop-blur-xl text-white border-b border-red-900/50 transition-all duration-300">
+      <div class="px-6 py-6 space-y-4 font-semibold text-base">
+        <div class="flex justify-between items-center pb-3 border-b border-slate-800">
+          <span class="text-amber-400 text-sm font-bold tracking-wider uppercase">Menu Navigation</span>
+          <button id="closeMobileDrawerBtn" class="text-slate-400 hover:text-white">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <a href="#hero" class="mobile-nav-link block py-2 border-b border-slate-800/60 hover:text-amber-400">Home</a>
+        <a href="#classes" class="mobile-nav-link block py-2 border-b border-slate-800/60 hover:text-amber-400">Classes Offered</a>
+        <a href="#why-us" class="mobile-nav-link block py-2 border-b border-slate-800/60 hover:text-amber-400">Why Choose Us</a>
+        <a href="#faculty" class="mobile-nav-link block py-2 border-b border-slate-800/60 hover:text-amber-400">Faculty Team</a>
+        <a href="#enquiry" class="mobile-nav-link block py-2 border-b border-slate-800/60 hover:text-amber-400">Enquiry & Admissions</a>
+        <div class="pt-4 flex flex-col gap-3">
+          <a href="tel:919686575508" class="btn-gold w-full text-center text-sm py-3 justify-center">
+            <i data-lucide="phone-call" class="w-4 h-4"></i>
+            Call Us Immediately
+          </a>
+          <a href="https://wa.me/919686575508?text=Hi%2C+I+am+interested+to+know+more+about+Pranamya+Tutorials." target="_blank" class="bg-emerald-600 text-white font-bold py-3 px-4 rounded-xl text-center text-sm flex items-center justify-center gap-2 hover:bg-emerald-500">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            WhatsApp Inquiry
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-container relative">
+    <div class="hero-slide active" style="background-image: url('assets/images/hero1.svg');"></div>
+    <div class="hero-slide" style="background-image: url('assets/images/hero2.svg');"></div>
+    <div class="hero-slide" style="background-image: url('assets/images/hero3.svg');"></div>
+
+    <div class="absolute inset-0 hero-overlay flex flex-col justify-between p-4 sm:p-8 lg:p-12 text-white">
+      <div class="max-w-4xl mx-auto w-full text-center my-auto py-2 sm:py-6">
+        <div class="inline-flex items-center gap-2 bg-red-600/90 text-amber-300 border border-amber-400/40 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 sm:mb-4 shadow-lg backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+          Admissions Open for Academic Year
+        </div>
+
+        <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight uppercase font-sans">
+          <span class="text-white drop-shadow-md">BUILD TODAY</span>
+          <span class="text-amber-400 drop-shadow-md"> EXCEL TOMORROW</span>
+        </h1>
+
+        <div class="mt-1 sm:mt-2">
+          <p class="kannada-text text-amber-300 text-sm sm:text-xl font-bold">
+            ಪ್ರಣಮ್ಯ ಟ್ಯೂಟೋರಿಯಲ್ಸ್ — ಪ್ರವೇಶಾತಿ ಪ್ರಾರಂಭವಾಗಿದೆ
+          </p>
+          <p class="text-slate-200 text-xs sm:text-lg font-medium italic mt-0.5 sm:mt-1">
+            "Strong Basics. Bright Future. Inspiring Young Minds."
+          </p>
+        </div>
+
+        <div class="mt-3 sm:mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <a href="#enquiry" class="btn-gold text-xs sm:text-base py-2.5 px-5 sm:py-3.5 sm:px-8 shadow-xl">
+            <i data-lucide="edit-3" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+            Enroll / Book Free Demo
+          </a>
+          <a href="#classes" class="bg-slate-950/80 hover:bg-slate-900 text-white font-bold border border-slate-700 text-xs sm:text-base py-2.5 px-5 sm:py-3.5 sm:px-8 rounded-xl backdrop-blur-md transition flex items-center gap-2">
+            <i data-lucide="book-open" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-400"></i>
+            View Courses
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center gap-2 mb-2">
+        <button class="hero-dot w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-400 transition-all duration-300 opacity-100" data-slide="0" aria-label="Slide 1"></button>
+        <button class="hero-dot w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-white/50 transition-all duration-300 opacity-50" data-slide="1" aria-label="Slide 2"></button>
+        <button class="hero-dot w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-white/50 transition-all duration-300 opacity-50" data-slide="2" aria-label="Slide 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fact Cards Scroll Strip -->
+  <div class="hero-scroll-strip py-3 px-2">
+    <div class="max-w-7xl mx-auto">
+      <div class="marquee-container gap-3 sm:gap-4">
+        <div class="fact-card">
+          <span class="w-8 h-8 rounded-full bg-red-600/80 flex items-center justify-center text-amber-300"><i data-lucide="check-circle" class="w-4 h-4"></i></span>
+          <div>
+            <div class="text-xs text-amber-400 font-bold uppercase">100% Concept Focus</div>
+            <div class="text-[11px] text-slate-300">No Rote Learning</div>
+          </div>
+        </div>
+
+        <div class="fact-card">
+          <span class="w-8 h-8 rounded-full bg-amber-500/80 flex items-center justify-center text-slate-950"><i data-lucide="award" class="w-4 h-4"></i></span>
+          <div>
+            <div class="text-xs text-amber-400 font-bold uppercase">State Syllabus Experts</div>
+            <div class="text-[11px] text-slate-300">Targeted Board Prep</div>
+          </div>
+        </div>
+
+        <div class="fact-card">
+          <span class="w-8 h-8 rounded-full bg-blue-600/80 flex items-center justify-center text-white"><i data-lucide="users" class="w-4 h-4"></i></span>
+          <div>
+            <div class="text-xs text-amber-400 font-bold uppercase">Limited Batch Size</div>
+            <div class="text-[11px] text-slate-300">Personalized Care</div>
+          </div>
+        </div>
+
+        <div class="fact-card">
+          <span class="w-8 h-8 rounded-full bg-purple-600/80 flex items-center justify-center text-white"><i data-lucide="file-text" class="w-4 h-4"></i></span>
+          <div>
+            <div class="text-xs text-amber-400 font-bold uppercase">Materials Included</div>
+            <div class="text-[11px] text-slate-300">Notes & Model Papers</div>
+          </div>
+        </div>
+
+        <div class="fact-card">
+          <span class="w-8 h-8 rounded-full bg-emerald-600/80 flex items-center justify-center text-white"><i data-lucide="trending-up" class="w-4 h-4"></i></span>
+          <div>
+            <div class="text-xs text-amber-400 font-bold uppercase">Regular Test Series</div>
+            <div class="text-[11px] text-slate-300">Parent Analytics Update</div>
+          </div>
+        </div>
+
+        <div class="fact-card">
+          <span class="w-8 h-8 rounded-full bg-rose-600/80 flex items-center justify-center text-white"><i data-lucide="map-pin" class="w-4 h-4"></i></span>
+          <div>
+            <div class="text-xs text-amber-400 font-bold uppercase">Rajajinagar Location</div>
+            <div class="text-[11px] text-slate-300">Easy Accessibility</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Classes Offered Section -->
+  <section id="classes" class="py-16 bg-slate-100 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+          <i data-lucide="book-open-check" class="w-4 h-4"></i>
+          Academic Coaching Courses
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">CLASSES WE OFFER</h2>
+        <p class="kannada-text text-red-600 font-semibold text-lg mt-1">ತರಗತಿಗಳು: 8th, 9th, 10th Standard & 1st, 2nd PUC</p>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">Tailored curriculum designed for Karnataka State Board excellence with individual attention and conceptual mastery.</p>
+      </div>
+
+      <div class="mb-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold"><i data-lucide="file-text" class="w-5 h-5"></i></div>
+          <div class="text-left">
+            <div class="font-bold text-sm text-slate-900">MATERIALS PROVIDED</div>
+            <div class="text-xs text-slate-500">Structured Notes & Question Banks</div>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold"><i data-lucide="users" class="w-5 h-5"></i></div>
+          <div class="text-left">
+            <div class="font-bold text-sm text-slate-900">LIMITED BATCH SIZE</div>
+            <div class="text-xs text-slate-500">Personalized Doubt Resolution</div>
+          </div>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-center gap-3">
+          <div class="w-10 h-10 rounded-lg bg-red-100 text-red-700 flex items-center justify-center font-bold"><i data-lucide="award" class="w-5 h-5"></i></div>
+          <div class="text-left">
+            <div class="font-bold text-sm text-slate-900">STATE SYLLABUS</div>
+            <div class="text-xs text-slate-500">Aligned with Board Blueprints</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-snap-scroll gap-6">
+        <!-- 8th Std Card -->
+        <div class="snap-card-item">
+          <div class="bg-white rounded-2xl overflow-hidden card-hover-effect flex flex-col h-full border border-slate-200 shadow-md">
+            <div class="p-6 bg-gradient-to-r from-blue-600 to-indigo-700 text-white relative">
+              <span class="absolute top-4 right-4 bg-black/30 backdrop-blur-md text-amber-300 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border border-amber-300/30">State Syllabus</span>
+              <div class="kannada-text text-amber-300 text-sm font-bold mb-1">8 ನೇ ತರಗತಿ</div>
+              <h3 class="text-2xl font-black tracking-tight">8th Standard</h3>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-slate-600 leading-relaxed">Targeted guidance for 8th grade students to master fundamentals in Mathematics, Science & Languages with zero exam stress.</p>
+              <div class="space-y-2.5 pt-2 border-t border-slate-100">
+                <div class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">Key Highlights:</div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Concept Clarity & Foundation</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Regular Chapterwise Tests</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Daily Homework Support</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Strong Academic Foundation</span></div>
+              </div>
+              <div class="pt-4 border-t border-slate-100">
+                <a href="#enquiry" onclick="preselectCourse('8th Standard')" class="w-full bg-slate-900 hover:bg-red-600 text-white text-xs font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 group">
+                  <span>Enquire for 8th Standard</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9th Std Card -->
+        <div class="snap-card-item">
+          <div class="bg-white rounded-2xl overflow-hidden card-hover-effect flex flex-col h-full border border-slate-200 shadow-md">
+            <div class="p-6 bg-gradient-to-r from-cyan-600 to-teal-700 text-white relative">
+              <span class="absolute top-4 right-4 bg-black/30 backdrop-blur-md text-amber-300 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border border-amber-300/30">State Syllabus</span>
+              <div class="kannada-text text-amber-300 text-sm font-bold mb-1">9 ನೇ ತರಗತಿ</div>
+              <h3 class="text-2xl font-black tracking-tight">9th Standard</h3>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-slate-600 leading-relaxed">Comprehensive coverage bridging middle school concepts to board exam readiness with step-by-step problem solving.</p>
+              <div class="space-y-2.5 pt-2 border-t border-slate-100">
+                <div class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">Key Highlights:</div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>In-depth Subject Learning</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Dedicated Doubt Solving</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Weekly Performance Tests</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Early SSLC Exam Prep</span></div>
+              </div>
+              <div class="pt-4 border-t border-slate-100">
+                <a href="#enquiry" onclick="preselectCourse('9th Standard')" class="w-full bg-slate-900 hover:bg-red-600 text-white text-xs font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 group">
+                  <span>Enquire for 9th Standard</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10th Std Card -->
+        <div class="snap-card-item">
+          <div class="bg-white rounded-2xl overflow-hidden card-hover-effect flex flex-col h-full border border-slate-200 shadow-md">
+            <div class="p-6 bg-gradient-to-r from-red-600 to-rose-800 text-white relative">
+              <span class="absolute top-4 right-4 bg-black/30 backdrop-blur-md text-amber-300 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border border-amber-300/30">Board Exam Special</span>
+              <div class="kannada-text text-amber-300 text-sm font-bold mb-1">10 ನೇ ತರಗತಿ (SSLC)</div>
+              <h3 class="text-2xl font-black tracking-tight">10th Standard (SSLC)</h3>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-slate-600 leading-relaxed">Rigorous board preparation with model papers, chapter test series, and individualized feedback for distinction scores.</p>
+              <div class="space-y-2.5 pt-2 border-t border-slate-100">
+                <div class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">Key Highlights:</div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>SSLC Board Exam Focus</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Important Questions & Blueprints</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Time Management Strategies</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Continuous Performance Tracking</span></div>
+              </div>
+              <div class="pt-4 border-t border-slate-100">
+                <a href="#enquiry" onclick="preselectCourse('10th Standard')" class="w-full bg-slate-900 hover:bg-red-600 text-white text-xs font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 group">
+                  <span>Enquire for 10th Standard</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1st PUC Card -->
+        <div class="snap-card-item">
+          <div class="bg-white rounded-2xl overflow-hidden card-hover-effect flex flex-col h-full border border-slate-200 shadow-md">
+            <div class="p-6 bg-gradient-to-r from-amber-500 to-orange-700 text-white relative">
+              <span class="absolute top-4 right-4 bg-black/30 backdrop-blur-md text-amber-300 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border border-amber-300/30">Science & Commerce</span>
+              <div class="kannada-text text-amber-300 text-sm font-bold mb-1">1 ನೇ ಪಿಯುಸಿ</div>
+              <h3 class="text-2xl font-black tracking-tight">1st PUC</h3>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-slate-600 leading-relaxed">Deep conceptual coaching for PCMB / Commerce subjects transitioning students smoothly into pre-university excellence.</p>
+              <div class="space-y-2.5 pt-2 border-t border-slate-100">
+                <div class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">Key Highlights:</div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Concept Building & Application</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Problem Solving Mastery</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Chapterwise Test Series</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Exam Oriented Preparation</span></div>
+              </div>
+              <div class="pt-4 border-t border-slate-100">
+                <a href="#enquiry" onclick="preselectCourse('1st PUC')" class="w-full bg-slate-900 hover:bg-red-600 text-white text-xs font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 group">
+                  <span>Enquire for 1st PUC</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2nd PUC Card -->
+        <div class="snap-card-item">
+          <div class="bg-white rounded-2xl overflow-hidden card-hover-effect flex flex-col h-full border border-slate-200 shadow-md">
+            <div class="p-6 bg-gradient-to-r from-fuchsia-600 to-purple-800 text-white relative">
+              <span class="absolute top-4 right-4 bg-black/30 backdrop-blur-md text-amber-300 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border border-amber-300/30">Board & Competitive Focus</span>
+              <div class="kannada-text text-amber-300 text-sm font-bold mb-1">2 ನೇ ಪಿಯುಸಿ</div>
+              <h3 class="text-2xl font-black tracking-tight">2nd PUC</h3>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-slate-600 leading-relaxed">Mastery program designed for top ranks in 2nd PUC Board exams with regular mock tests and past paper revisions.</p>
+              <div class="space-y-2.5 pt-2 border-t border-slate-100">
+                <div class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">Key Highlights:</div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Advanced Subject Learning</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Previous Year Question Papers</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Full Length Model Tests</span></div>
+                <div class="flex items-start gap-2.5 text-xs text-slate-700 font-medium"><div class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3"></i></div><span>Scoring Strategies & Tips</span></div>
+              </div>
+              <div class="pt-4 border-t border-slate-100">
+                <a href="#enquiry" onclick="preselectCourse('2nd PUC')" class="w-full bg-slate-900 hover:bg-red-600 text-white text-xs font-bold py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 group">
+                  <span>Enquire for 2nd PUC</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-us" class="py-16 bg-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+          <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i>
+          Why Choose Pranamya Tutorials?
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">OUR PILLARS OF ACADEMIC EXCELLENCE</h2>
+        <p class="kannada-text text-red-600 font-semibold text-lg mt-1">ಏಕೆ ಪ್ರಣಮ್ಯ ಟ್ಯೂಟೋರಿಯಲ್ಸ್ ಆಯ್ಕೆ ಮಾಡಬೇಕು?</p>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">We go beyond traditional coaching to empower young minds with conceptual clarity, individual attention, and confidence for a bright future.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="why-us-card group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="why-us-number font-mono">01</span>
+            <div class="w-12 h-12 rounded-xl bg-red-50 group-hover:bg-red-600 text-red-600 group-hover:text-white transition-colors duration-300 flex items-center justify-center"><i data-lucide="user-check" class="w-6 h-6"></i></div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Experienced Faculties</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Seasoned educators with over 12+ years of expertise in State Board curriculum delivering clear, concise explanations.</p>
+        </div>
+
+        <div class="why-us-card group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="why-us-number font-mono">02</span>
+            <div class="w-12 h-12 rounded-xl bg-red-50 group-hover:bg-red-600 text-red-600 group-hover:text-white transition-colors duration-300 flex items-center justify-center"><i data-lucide="bar-chart-3" class="w-6 h-6"></i></div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Regular Tests & Analysis</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Weekly unit tests, monthly grand tests, and detailed progress analytics shared regularly with parents.</p>
+        </div>
+
+        <div class="why-us-card group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="why-us-number font-mono">03</span>
+            <div class="w-12 h-12 rounded-xl bg-red-50 group-hover:bg-red-600 text-red-600 group-hover:text-white transition-colors duration-300 flex items-center justify-center"><i data-lucide="heart-handshake" class="w-6 h-6"></i></div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Personal Attention</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Strict student-to-teacher ratio ensuring every child receives individualized doubt clearing and guidance.</p>
+        </div>
+
+        <div class="why-us-card group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="why-us-number font-mono">04</span>
+            <div class="w-12 h-12 rounded-xl bg-red-50 group-hover:bg-red-600 text-red-600 group-hover:text-white transition-colors duration-300 flex items-center justify-center"><i data-lucide="brain-circuit" class="w-6 h-6"></i></div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Concepts over Rote Learning</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Interactive teaching method focused on deep understanding, logical reasoning, and real-world applications.</p>
+        </div>
+
+        <div class="why-us-card group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="why-us-number font-mono">05</span>
+            <div class="w-12 h-12 rounded-xl bg-red-50 group-hover:bg-red-600 text-red-600 group-hover:text-white transition-colors duration-300 flex items-center justify-center"><i data-lucide="book-open" class="w-6 h-6"></i></div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Materials Provided</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Exhaustive notes, chapterwise question banks, formula sheets, and past year solutions provided to every student.</p>
+        </div>
+
+        <div class="why-us-card group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="why-us-number font-mono">06</span>
+            <div class="w-12 h-12 rounded-xl bg-red-50 group-hover:bg-red-600 text-red-600 group-hover:text-white transition-colors duration-300 flex items-center justify-center"><i data-lucide="users-round" class="w-6 h-6"></i></div>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">Limited Batch Sizes</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Small batch capacity guaranteeing focused study environment, quiet discipline, and active classroom participation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty Team Section -->
+  <!-- <section id="faculty" class="py-16 bg-slate-950 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-red-900/60 text-amber-300 border border-red-700/50 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="award" class="w-4 h-4 text-amber-400"></i> Expert Educators
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">MEET OUR FACULTY TEAM</h2>
+          <p class="kannada-text text-amber-400 font-semibold text-lg mt-1">ಅನುಭವಿ ಮತ್ತು ಬದ್ಧತೆಯುಳ್ಳ ಶಿಕ್ಷಕರ ತಂಡ</p>
+          <p class="text-slate-400 text-xs sm:text-sm mt-1 max-w-xl">Click on any faculty card to view complete qualifications, teaching methodology, and student mentorship details.</p>
+        </div>
+
+        <div class="flex items-center gap-3 self-end md:self-auto">
+          <button onclick="scrollFacultySlider(-1)" aria-label="Previous Faculty" class="w-11 h-11 rounded-full bg-slate-800 border border-slate-700 hover:border-amber-400 text-white hover:text-amber-400 flex items-center justify-center transition shadow-lg active:scale-95"><i data-lucide="chevron-left" class="w-6 h-6"></i></button>
+          <button onclick="scrollFacultySlider(1)" aria-label="Next Faculty" class="w-11 h-11 rounded-full bg-slate-800 border border-slate-700 hover:border-amber-400 text-white hover:text-amber-400 flex items-center justify-center transition shadow-lg active:scale-95"><i data-lucide="chevron-right" class="w-6 h-6"></i></button>
+        </div>
+      </div>
+
+      <div id="facultySlider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-6 pt-2 scrollbar-none scroll-smooth"> -->
+        <!-- Shishira Bhat -->
+        <!-- <div onclick="openFacultyModal(1)" class="snap-start flex-none w-[280px] sm:w-[340px] h-[400px] sm:h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer border border-slate-800 hover:border-amber-400/60 transition-all duration-300 shadow-2xl transform hover:-translate-y-2">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" alt="Shishira Bhat" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity"></div>
+          <div class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-300 border border-amber-400/30 text-[11px] font-bold px-3 py-1 rounded-full">16+ Years Experience</div>
+          <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-amber-300 transition-colors leading-tight">Shishira Bhat</h3>
+            <div class="text-sm text-slate-300 font-medium mt-1">Founder & CEO</div>
+            <div class="flex items-center justify-between mt-4">
+              <div onclick="event.stopPropagation(); window.open('https://linkedin.com', '_blank')" class="w-10 h-10 rounded-full bg-[#0077b5] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"><i data-lucide="linkedin" class="w-5 h-5 fill-current stroke-none"></i></div>
+              <span class="text-xs font-bold text-amber-400 flex items-center gap-1 group-hover:underline">View Profile <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Suraj Vijay Shetty -->
+        <!-- <div onclick="openFacultyModal(2)" class="snap-start flex-none w-[280px] sm:w-[340px] h-[400px] sm:h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer border border-slate-800 hover:border-amber-400/60 transition-all duration-300 shadow-2xl transform hover:-translate-y-2">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Suraj Vijay Shetty" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity"></div>
+          <div class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-300 border border-amber-400/30 text-[11px] font-bold px-3 py-1 rounded-full">14+ Years Experience</div>
+          <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-amber-300 transition-colors leading-tight">Suraj Vijay Shetty</h3>
+            <div class="text-sm text-slate-300 font-medium mt-1">Co-Founder & Director</div>
+            <div class="flex items-center justify-between mt-4">
+              <div onclick="event.stopPropagation(); window.open('https://linkedin.com', '_blank')" class="w-10 h-10 rounded-full bg-[#0077b5] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"><i data-lucide="linkedin" class="w-5 h-5 fill-current stroke-none"></i></div>
+              <span class="text-xs font-bold text-amber-400 flex items-center gap-1 group-hover:underline">View Profile <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Dr. Vinay Kumar -->
+         <!-- 
+        <div onclick="openFacultyModal(3)" class="snap-start flex-none w-[280px] sm:w-[340px] h-[400px] sm:h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer border border-slate-800 hover:border-amber-400/60 transition-all duration-300 shadow-2xl transform hover:-translate-y-2">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800" alt="Dr. Vinay Kumar" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity"></div>
+          <div class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-300 border border-amber-400/30 text-[11px] font-bold px-3 py-1 rounded-full">12+ Years Experience</div>
+          <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-amber-300 transition-colors leading-tight">Dr. Vinay Kumar</h3>
+            <div class="text-sm text-slate-300 font-medium mt-1">Chemistry Specialist</div>
+            <div class="flex items-center justify-between mt-4">
+              <div onclick="event.stopPropagation(); window.open('https://linkedin.com', '_blank')" class="w-10 h-10 rounded-full bg-[#0077b5] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"><i data-lucide="linkedin" class="w-5 h-5 fill-current stroke-none"></i></div>
+              <span class="text-xs font-bold text-amber-400 flex items-center gap-1 group-hover:underline">View Profile <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+            </div>
+          </div>
+        </div>
+      -->
+        <!-- Mrs. Archana K. Bhat -->
+         <!-- 
+        <div onclick="openFacultyModal(4)" class="snap-start flex-none w-[280px] sm:w-[340px] h-[400px] sm:h-[460px] rounded-3xl overflow-hidden relative group cursor-pointer border border-slate-800 hover:border-amber-400/60 transition-all duration-300 shadow-2xl transform hover:-translate-y-2">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" alt="Mrs. Archana K. Bhat" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity"></div>
+          <div class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md text-amber-300 border border-amber-400/30 text-[11px] font-bold px-3 py-1 rounded-full">11+ Years Experience</div>
+          <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-amber-300 transition-colors leading-tight">Mrs. Archana K. Bhat</h3>
+            <div class="text-sm text-slate-300 font-medium mt-1">Biology & Science Lead</div>
+            <div class="flex items-center justify-between mt-4">
+              <div onclick="event.stopPropagation(); window.open('https://linkedin.com', '_blank')" class="w-10 h-10 rounded-full bg-[#0077b5] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform"><i data-lucide="linkedin" class="w-5 h-5 fill-current stroke-none"></i></div>
+              <span class="text-xs font-bold text-amber-400 flex items-center gap-1 group-hover:underline">View Profile <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide-Up Faculty Detail Modal -->
+  <!-- <div id="facultyModal" class="modal-overlay" onclick="closeFacultyModalOnBackdrop(event)">
+    <div class="modal-container" onclick="event.stopPropagation()">
+      <div class="flex justify-between items-start pb-4 border-b border-slate-200">
+        <div>
+          <span id="modalFacultyExperience" class="text-xs font-extrabold text-amber-600 bg-amber-100 px-3 py-1 rounded-full uppercase tracking-wider">Experience Badge</span>
+          <h3 id="modalFacultyName" class="text-2xl font-black text-slate-900 mt-2">Faculty Name</h3>
+          <div id="modalFacultyDesignation" class="text-xs font-semibold text-slate-500">Designation</div>
+        </div>
+        <button onclick="closeFacultyModal()" aria-label="Close Modal" class="p-2 text-slate-400 hover:text-red-600 rounded-full hover:bg-slate-100 transition"><i data-lucide="x" class="w-6 h-6"></i></button>
+      </div>
+
+      <div class="py-6 space-y-4">
+        <div class="bg-red-50 border-l-4 border-red-600 p-4 rounded-r-xl">
+          <div class="text-xs font-bold text-red-700 uppercase tracking-wider mb-1">Qualifications & Expertise</div>
+          <div id="modalFacultyQualification" class="text-sm font-semibold text-slate-800"></div>
+          <div id="modalFacultySubjects" class="text-xs text-slate-600 mt-1"></div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Biography & Teaching Approach</h4>
+          <p id="modalFacultyBio" class="text-xs sm:text-sm text-slate-600 leading-relaxed"></p>
+        </div>
+
+        <div class="bg-slate-900 text-amber-300 p-4 rounded-xl italic text-xs sm:text-sm relative">
+          <i data-lucide="quote" class="w-6 h-6 text-amber-500/30 absolute top-2 right-2"></i>
+          <div id="modalFacultyQuote"></div>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-200 flex items-center justify-between gap-4">
+        <a href="#enquiry" onclick="closeFacultyModal()" class="btn-primary text-xs w-full justify-center">
+          <i data-lucide="message-square" class="w-4 h-4"></i> Ask Question to Faculty
+        </a>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Admission CTA Banner -->
+  <section class="py-12 bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white relative overflow-hidden shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+        <div class="space-y-3 max-w-2xl">
+          <div class="inline-flex items-center gap-2 bg-amber-400 text-slate-950 font-black px-3.5 py-1 rounded-full text-xs uppercase tracking-wider shadow-md">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> ADMISSION OPEN FOR NEW BATCHES
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">Give Your Child The Advantage Of Strong Basics & Top Board Marks!</h2>
+          <p class="kannada-text text-amber-200 text-base sm:text-lg font-bold">ನಿಮ್ಮ ಮಕ್ಕಳ ಪ್ರಕಾಶಮಾನ ಭವಿಷ್ಯಕ್ಕಾಗಿ ಇಂದು ನೋಂದಾಯಿಸಿ!</p>
+          <p class="text-slate-100 text-xs sm:text-sm font-medium">Limited batch seats available for 8th, 9th, 10th SSLC and 1st & 2nd PUC. Contact our counseling desk today.</p>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0">
+          <a href="#enquiry" class="btn-gold text-sm sm:text-base py-4 px-8 shadow-2xl uppercase tracking-wider"><i data-lucide="send" class="w-5 h-5"></i> Submit Admission Enquiry</a>
+          <a href="tel:919686575508" class="bg-slate-950/80 hover:bg-slate-900 text-amber-300 font-bold border border-amber-400/40 text-sm py-4 px-6 rounded-xl transition flex items-center gap-2"><i data-lucide="phone-call" class="w-5 h-5 text-amber-400"></i> Call 96865 75508</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admission Enquiry & Counseling Section -->
+  <section id="enquiry" class="py-16 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 bg-red-100 text-red-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="help-circle" class="w-4 h-4"></i> Get In Touch With Us
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">ADMISSION ENQUIRY & COUNSELING</h2>
+
+          <p class="kannada-text text-red-600 font-bold text-lg">ಸಂಪರ್ಕಿಸಿ ಮತ್ತು ಪ್ರವೇಶಾತಿ ಮಾಹಿತಿ ಪಡೆಯಿರಿ</p>
+
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Have questions regarding class timings, batch availability, or fee structures? Fill out the quick form and our counseling team will get back to you within 2 hours.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-4 p-4 bg-white rounded-2xl border border-slate-200 shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center shrink-0"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+              <div>
+                <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Institute Location</div>
+                <div class="text-sm font-semibold text-slate-900 mt-0.5">#637/B, 1st K Block, E Block, Dr. Rajkumar Road, 2nd Stage, Rajajinagar, Bengaluru – 560010</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 bg-white rounded-2xl border border-slate-200 shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center shrink-0"><i data-lucide="phone-call" class="w-5 h-5"></i></div>
+              <div>
+                <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Helpline Contact Numbers</div>
+                <div class="text-sm font-bold text-slate-900 mt-0.5 space-x-2">
+                  <a href="tel:919686575508" class="text-red-600 hover:underline">96865 75508</a> •
+                  <a href="tel:919620320309" class="text-red-600 hover:underline">96203 20309</a> •
+                  <a href="tel:919008735478" class="text-red-600 hover:underline">90087 35478</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 bg-white rounded-2xl border border-slate-200 shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0"><i data-lucide="mail" class="w-5 h-5"></i></div>
+              <div>
+                <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Official Email</div>
+                <div class="text-sm font-semibold text-slate-900 mt-0.5">pranamyatutorials@gmail.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Form Card -->
+        <div class="lg:col-span-7">
+          <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-slate-200 relative">
+            <div class="mb-6">
+              <h3 class="text-xl font-extrabold text-slate-900">Book Free Trial Class / Admission Query</h3>
+              <p class="text-xs text-slate-500 mt-1">Submit your details to receive instant notification confirmation.</p>
+            </div>
+
+            <form id="enquiryForm" class="space-y-4" onsubmit="submitEnquiryForm(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="student_name" class="block text-xs font-bold text-slate-700 uppercase mb-1">Student Full Name <span class="text-red-500">*</span></label>
+                  <input type="text" id="student_name" name="student_name" required placeholder="e.g. Rahul Sharma" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm transition">
+                </div>
+                <div>
+                  <label for="parent_name" class="block text-xs font-bold text-slate-700 uppercase mb-1">Parent / Guardian Name</label>
+                  <input type="text" id="parent_name" name="parent_name" placeholder="e.g. Suresh Sharma" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm transition">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="phone" class="block text-xs font-bold text-slate-700 uppercase mb-1">Contact Mobile Number <span class="text-red-500">*</span></label>
+                  <input type="tel" id="phone" name="phone" required placeholder="e.g. 96865 75508" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm transition">
+                </div>
+                <div>
+                  <label for="email" class="block text-xs font-bold text-slate-700 uppercase mb-1">Email Address</label>
+                  <input type="email" id="email" name="email" placeholder="e.g. student@gmail.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm transition">
+                </div>
+              </div>
+
+              <div>
+                <label for="course" class="block text-xs font-bold text-slate-700 uppercase mb-1">Class / Standard Interested <span class="text-red-500">*</span></label>
+                <select id="course" name="course" required class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm bg-white transition">
+                  <option value="">Select Interested Class & Board</option>
+                  <optgroup label="8th Standard">
+                    <option value="8th Standard (State)">8th Standard (State)</option>
+                    <option value="8th Standard (CBSE)">8th Standard (CBSE)</option>
+                    <option value="8th Standard (ICSE)">8th Standard (ICSE)</option>
+                  </optgroup>
+                  <optgroup label="9th Standard">
+                    <option value="9th Standard (State)">9th Standard (State)</option>
+                    <option value="9th Standard (CBSE)">9th Standard (CBSE)</option>
+                    <option value="9th Standard (ICSE)">9th Standard (ICSE)</option>
+                  </optgroup>
+                  <optgroup label="10th Standard">
+                    <option value="10th Standard - SSLC (State)">10th Standard - SSLC (State)</option>
+                    <option value="10th Standard (CBSE)">10th Standard (CBSE)</option>
+                    <option value="10th Standard (ICSE)">10th Standard (ICSE)</option>
+                  </optgroup>
+                  <optgroup label="Pre-University Coaching">
+                    <option value="1st PUC (Science/Commerce)">1st PUC (Science / Commerce)</option>
+                    <option value="2nd PUC (Science/Commerce)">2nd PUC (Science / Commerce)</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-xs font-bold text-slate-700 uppercase mb-1">Specific Subject Queries or Message</label>
+                <textarea id="message" name="message" rows="3" placeholder="Tell us about specific subjects or preferred batch timings..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-red-600 focus:border-red-600 outline-none text-sm transition"></textarea>
+              </div>
+
+              <button type="submit" id="submitEnquiryBtn" class="btn-primary w-full py-4 text-sm uppercase tracking-wider font-extrabold shadow-xl mt-2 justify-center">
+                <i data-lucide="send" class="w-4 h-4 text-amber-400"></i>
+                <span>Submit Enquiry Now</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Confirmation Notification Modal -->
+  <div id="enquirySuccessModal" class="modal-overlay" onclick="closeEnquirySuccessModalOnBackdrop(event)">
+    <div class="modal-container text-center" onclick="event.stopPropagation()">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4 animate-bounce">
+        <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 mb-2">Enquiry Sent Successfully!</h3>
+      <p class="kannada-text text-amber-600 font-bold mb-3">ನಿಮ್ಮ ವಿಚಾರಣೆ ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಕೆಯಾಗಿದೆ</p>
+      
+      <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-left text-xs space-y-2 mb-6">
+        <div class="flex justify-between border-b border-slate-200 pb-2">
+          <span class="text-slate-500">Enquiry Ref ID:</span>
+          <span id="modalEnquiryId" class="font-bold text-red-600">PT-2026-001</span>
+        </div>
+        <div class="flex justify-between border-b border-slate-200 pb-2">
+          <span class="text-slate-500">Email Notification:</span>
+          <span class="font-bold text-emerald-600 flex items-center gap-1">
+            <i data-lucide="mail-check" class="w-3.5 h-3.5"></i> Registered for pranamyatutorials@gmail.com
+          </span>
+        </div>
+        <div id="modalEnquiryMsg" class="text-slate-600 pt-1">
+          We have recorded your query. Our academic counselor will contact you shortly.
+        </div>
+      </div>
+
+      <button onclick="closeEnquirySuccessModal()" class="btn-gold w-full py-3 text-sm justify-center">
+        Got It, Thank You!
+      </button>
+    </div>
+  </div>
+
+  <!-- Condensed Footer -->
+  <footer class="bg-slate-950 text-slate-300 pt-8 pb-4 border-t-4 border-red-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-6 border-b border-slate-800 text-xs sm:text-sm">
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/logo.svg" alt="Pranamya Tutorials Logo" class="w-10 h-10 object-contain">
+            <div>
+              <div class="font-extrabold text-lg text-white leading-none">PRANAMYA TUTORIALS</div>
+              <div class="kannada-text text-amber-400 text-xs font-semibold">ಪ್ರಣಮ್ಯ ಟ್ಯೂಟೋರಿಯಲ್ಸ್</div>
+            </div>
+          </div>
+          <p class="text-slate-400 text-xs italic">"Strong Basics. Bright Future. Inspiring Young Minds."</p>
+          <div class="flex items-start gap-2 text-slate-300 pt-1">
+            <i data-lucide="map-pin" class="w-4 h-4 text-red-500 shrink-0 mt-0.5"></i>
+            <span>#637/B, 1st K Block, E Block, Dr. Rajkumar Road, 2nd Stage, Rajajinagar, Bengaluru – 560010</span>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm tracking-wider uppercase border-b border-slate-800 pb-1 inline-block">Quick Links & Call Lines</h4>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <a href="#hero" class="hover:text-amber-400 transition flex items-center gap-1"><i data-lucide="chevron-right" class="w-3 h-3 text-red-500"></i> Home</a>
+            <a href="#classes" class="hover:text-amber-400 transition flex items-center gap-1"><i data-lucide="chevron-right" class="w-3 h-3 text-red-500"></i> Classes Offered</a>
+            <a href="#why-us" class="hover:text-amber-400 transition flex items-center gap-1"><i data-lucide="chevron-right" class="w-3 h-3 text-red-500"></i> Why Choose Us</a>
+            <a href="#faculty" class="hover:text-amber-400 transition flex items-center gap-1"><i data-lucide="chevron-right" class="w-3 h-3 text-red-500"></i> Faculty Team</a>
+            <a href="#enquiry" class="hover:text-amber-400 transition flex items-center gap-1"><i data-lucide="chevron-right" class="w-3 h-3 text-red-500"></i> Admission Form</a>
+          </div>
+          <div class="pt-2 text-xs space-y-1">
+            <div class="text-slate-400 font-semibold">Direct Calling Lines:</div>
+            <div class="flex flex-wrap gap-2 text-amber-400 font-bold">
+              <a href="tel:919686575508" class="hover:underline">96865 75508</a> •
+              <a href="tel:919620320309" class="hover:underline">96203 20309</a> •
+              <a href="tel:919008735478" class="hover:underline">90087 35478</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="font-bold text-white text-sm tracking-wider uppercase border-b border-slate-800 pb-1 inline-block">Location & Directions</h4>
+          <div class="flex items-center gap-4 bg-slate-900 p-3 rounded-2xl border border-slate-800">
+            <div class="w-16 h-16 bg-white p-1 rounded-lg shrink-0 flex items-center justify-center">
+              <svg viewBox="0 0 100 100" class="w-full h-full">
+                <path d="M0,0 L30,0 L30,30 L0,30 Z M40,0 L70,0 L70,30 L40,30 Z M0,40 L30,40 L30,70 L0,70 Z M50,50 L90,50 L90,90 L50,90 Z" fill="#0F172A"/>
+                <rect x="7" y="7" width="16" height="16" fill="#C8102E"/>
+                <rect x="47" y="7" width="16" height="16" fill="#C8102E"/>
+                <rect x="7" y="47" width="16" height="16" fill="#C8102E"/>
+              </svg>
+            </div>
+            <div class="space-y-1">
+              <div class="text-xs font-bold text-amber-400 uppercase">Scan for Location</div>
+              <div class="text-[11px] text-slate-400">Dr. Rajkumar Road, Rajajinagar</div>
+              <a href="https://maps.google.com/?q=637/B,+1st+K+Block,+Dr+Rajkumar+Rd,+Rajajinagar,+Bengaluru,+Karnataka+560010" target="_blank" class="inline-flex items-center gap-1 text-xs text-white font-bold bg-red-600 hover:bg-red-500 px-2.5 py-1 rounded-md transition mt-1"><i data-lucide="navigation" class="w-3 h-3"></i> Open Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-500 gap-2">
+        <div>© 2026 <span class="font-bold text-slate-300">Pranamya Tutorials</span>. All Rights Reserved.</div>
+        <div class="kannada-text text-amber-400/80">ಉತ್ತಮ ಶಿಕ್ಷಣ • ಉಜ್ವಲ ಭವಿಷ್ಯ</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Call FAB -->
+  <a href="tel:919686575508" class="call-fab group" aria-label="Call Pranamya Tutorials">
+    <div class="call-pulse"></div>
+    <i data-lucide="phone-call" class="w-6 h-6 stroke-2 text-white"></i>
+    <span class="absolute right-16 bg-slate-900 text-white text-xs font-bold py-1.5 px-3 rounded-xl whitespace-nowrap shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none hidden sm:block">Call Us Directly</span>
+  </a>
+
+  <!-- Floating WhatsApp FAB -->
+  <a href="https://wa.me/919686575508?text=Hi%2C+I+am+interested+to+know+more+about+Pranamya+Tutorials." target="_blank" rel="noopener noreferrer" class="whatsapp-fab group" aria-label="Chat on WhatsApp">
+    <div class="whatsapp-pulse"></div>
+    <i data-lucide="message-circle" class="w-7 h-7 fill-current stroke-none"></i>
+    <span class="absolute right-16 bg-slate-900 text-white text-xs font-bold py-1.5 px-3 rounded-xl whitespace-nowrap shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none hidden sm:block">Chat on WhatsApp</span>
+  </a>
+
+  <!-- Fixed Mobile Bottom Navigation Bar -->
+  <div class="fixed-mobile-bottom-bar">
+    <a href="#classes" class="bottom-bar-item"><i data-lucide="book-open"></i><span>Quick Links</span></a>
+    <a href="#enquiry" class="bottom-bar-item"><i data-lucide="edit-3"></i><span>Enquiry</span></a>
+    <a href="https://maps.google.com/?q=637/B,+1st+K+Block,+Dr+Rajkumar+Rd,+Rajajinagar,+Bengaluru,+Karnataka+560010" target="_blank" class="bottom-bar-item"><i data-lucide="map-pin"></i><span>Locate Us</span></a>
+    <a href="tel:919686575508" class="bottom-bar-item active"><i data-lucide="phone-call" class="text-amber-400"></i><span class="text-amber-400">Call Us</span></a>
+  </div>
+
+  <div class="bottom-bar-spacer"></div>
+
+  <!-- Main JavaScript App -->
+  <script src="assets/js/app.js"></script>
+  <script>
+    const facultyData = [
+      {
+        id: 1,
+        name: 'Shishira Bhat',
+        designation: 'Founder & CEO',
+        qualification: 'M.Sc. (Physics), B.Ed.',
+        experience: '16+ Years Experience',
+        subjects: 'Physics (10th, 1st & 2nd PUC)',
+        bio: 'Shishira Bhat is renowned for turning complex Physics concepts into intuitive visual stories. He has guided over 3,000+ students to achieve top scores in board examinations.',
+        quote: 'Physics is not about memorizing formulas; it is about learning how to see the universe work.'
+      },
+      {
+        id: 2,
+        name: 'Suraj Vijay Shetty',
+        designation: 'Co-Founder & Director',
+        qualification: 'M.Sc. (Mathematics), Gold Medalist',
+        experience: '14+ Years Experience',
+        subjects: 'Mathematics (8th, 9th, 10th & PUC)',
+        bio: 'Suraj Vijay Shetty specializes in building mental math agility, eliminating math phobia, and fostering problem-solving confidence among students.',
+        quote: 'Mathematics is a language of logic. Once you grasp the basics, every problem has a key waiting to unlock it.'
+      },
+      {
+        id: 3,
+        name: 'Dr. Vinay Kumar',
+        designation: 'Chemistry Specialist',
+        qualification: 'Ph.D. in Organic Chemistry',
+        experience: '12+ Years Experience',
+        subjects: 'Chemistry (9th, 10th, 1st & 2nd PUC)',
+        bio: 'Dr. Vinay simplifies organic reaction mechanisms and chemical bonding using practical memory tricks and step-by-step reaction roadmaps.',
+        quote: 'Understand the fundamental reactions, and Chemistry transforms from a challenge into your favorite subject.'
+      },
+      {
+        id: 4,
+        name: 'Mrs. Archana K. Bhat',
+        designation: 'Biology & Science Lead',
+        qualification: 'M.Sc. (Botany & Zoology)',
+        experience: '11+ Years Experience',
+        subjects: 'Biology & Science (8th, 9th, 10th & PUC)',
+        bio: 'Mrs. Archana combines high-definition diagrammatic representations with memory techniques to help students achieve flawless scores in Biology.',
+        quote: 'Clear diagrams and precise anatomical logic are the secrets to mastering life sciences.'
+      }
+    ];
+
+    function scrollFacultySlider(direction) {
+      const slider = document.getElementById('facultySlider');
+      if (!slider) return;
+      slider.scrollBy({ left: direction * 340, behavior: 'smooth' });
+    }
+
+    function openFacultyModal(id) {
+      const fac = facultyData.find(f => f.id === id);
+      if (!fac) return;
+
+      document.getElementById('modalFacultyName').textContent = fac.name;
+      document.getElementById('modalFacultyDesignation').textContent = fac.designation;
+      document.getElementById('modalFacultyQualification').textContent = fac.qualification;
+      document.getElementById('modalFacultyExperience').textContent = fac.experience;
+      document.getElementById('modalFacultySubjects').textContent = 'Subjects Taught: ' + fac.subjects;
+      document.getElementById('modalFacultyBio').textContent = fac.bio;
+      document.getElementById('modalFacultyQuote').textContent = '"' + fac.quote + '"';
+
+      const modal = document.getElementById('facultyModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeFacultyModal() {
+      const modal = document.getElementById('facultyModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function closeFacultyModalOnBackdrop(e) {
+      if (e.target.id === 'facultyModal') {
+        closeFacultyModal();
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#3b0764"/>
+    </linearGradient>
+    <linearGradient id="boardGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bgGrad1)"/>
+  
+  <!-- Perspective Lines of Classroom Floor -->
+  <path d="M0,450 L1200,450 M0,520 L1200,520 M0,580 L1200,580" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+  <path d="M200,450 L0,600 M400,450 L200,600 M600,450 L600,600 M800,450 L1000,600 M1000,450 L1200,600" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+
+  <!-- Smart Digital Blackboard in Center -->
+  <rect x="250" y="60" width="700" height="340" rx="16" fill="url(#boardGlow)" stroke="#FFD700" stroke-width="4" filter="drop-shadow(0 0 25px rgba(2,132,199,0.5))"/>
+  <rect x="270" y="80" width="660" height="300" rx="8" fill="#091E3A" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+
+  <!-- Math & Science Equations on Board -->
+  <text x="310" y="140" font-family="'Courier New', monospace" font-weight="bold" font-size="28" fill="#38BDF8">E = mc²   |   F = m · a</text>
+  <text x="310" y="190" font-family="'Courier New', monospace" font-weight="bold" font-size="26" fill="#FACC15">sin²(θ) + cos²(θ) = 1</text>
+  <text x="310" y="240" font-family="'Courier New', monospace" font-weight="bold" font-size="24" fill="#4ADE80">2H₂ + O₂  ➔  2H₂O  (State Board Focus)</text>
+  <text x="310" y="310" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="32" fill="#FFFFFF">PRANAMYA TUTORIALS — SMART CLASSROOM</text>
+
+  <!-- Teacher Silhouette & Students at Desks -->
+  <!-- Teacher -->
+  <g transform="translate(180, 220)">
+    <circle cx="30" cy="30" r="22" fill="#F59E0B"/>
+    <path d="M5,140 C5,70 55,70 55,140 Z" fill="#F59E0B"/>
+    <!-- Pointer Stick -->
+    <line x1="45" y1="60" x2="120" y2="10" stroke="#FFD700" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Student Desks in Foreground -->
+  <g transform="translate(420, 380)">
+    <rect x="0" y="50" width="160" height="50" rx="8" fill="#334155" stroke="#64748B"/>
+    <circle cx="50" cy="20" r="18" fill="#EC4899"/>
+    <circle cx="110" cy="20" r="18" fill="#3B82F6"/>
+  </g>
+  <g transform="translate(700, 380)">
+    <rect x="0" y="50" width="160" height="50" rx="8" fill="#334155" stroke="#64748B"/>
+    <circle cx="50" cy="20" r="18" fill="#10B981"/>
+    <circle cx="110" cy="20" r="18" fill="#F59E0B"/>
+  </g>
+
+  <!-- Ambient Lights -->
+  <circle cx="350" cy="30" r="120" fill="#38BDF8" opacity="0.12"/>
+  <circle cx="850" cy="30" r="120" fill="#F43F5E" opacity="0.12"/>
+</svg>

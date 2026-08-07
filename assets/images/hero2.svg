@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#881337"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#bgGrad2)"/>
+  
+  <!-- Glowing Laboratory & Physics Diagrams -->
+  <g transform="translate(100, 80)" stroke="#FACC15" stroke-width="3" fill="none" opacity="0.8">
+    <!-- Atom -->
+    <circle cx="200" cy="150" r="80" stroke="#38BDF8"/>
+    <ellipse cx="200" cy="150" rx="100" ry="35" transform="rotate(45 200 150)"/>
+    <ellipse cx="200" cy="150" rx="100" ry="35" transform="rotate(-45 200 150)"/>
+    <circle cx="200" cy="150" r="14" fill="#F43F5E"/>
+  </g>
+
+  <!-- Big Glowing Badge -->
+  <g transform="translate(600, 150)">
+    <circle cx="200" cy="150" r="140" fill="rgba(15, 23, 42, 0.7)" stroke="#FFD700" stroke-width="5"/>
+    <text x="200" y="130" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="34" fill="#FFD700" text-anchor="middle">SSLC & PUC</text>
+    <text x="200" y="175" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#FFFFFF" text-anchor="middle">EXCELLENCE</text>
+    <text x="200" y="215" font-family="'Noto Serif Kannada', serif" font-weight="700" font-size="22" fill="#38BDF8" text-anchor="middle">ಉತ್ತಮ ಶಿಕ್ಷಣ - ಉಜ್ವಲ ಭವಿಷ್ಯ</text>
+  </g>
+
+  <!-- Floating Formula Pills -->
+  <rect x="150" y="420" width="220" height="60" rx="30" fill="rgba(255,255,255,0.1)" stroke="#38BDF8" stroke-width="2"/>
+  <text x="260" y="458" font-family="sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF" text-anchor="middle">v = u + at</text>
+
+  <rect x="420" y="420" width="240" height="60" rx="30" fill="rgba(255,255,255,0.1)" stroke="#4ADE80" stroke-width="2"/>
+  <text x="540" y="458" font-family="sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF" text-anchor="middle">PV = nRT</text>
+
+  <rect x="700" y="420" width="280" height="60" rx="30" fill="rgba(255,255,255,0.1)" stroke="#F43F5E" stroke-width="2"/>
+  <text x="840" y="458" font-family="sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF" text-anchor="middle">a² + b² = c²</text>
+</svg>

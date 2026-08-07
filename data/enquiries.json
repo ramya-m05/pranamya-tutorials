@@ -1,0 +1,12 @@
+[
+    {
+        "enquiry_id": "PT-20260801-071421-451",
+        "timestamp": "2026-08-01 07:14:21",
+        "student_name": "Rohan V",
+        "parent_name": "Venkatesh",
+        "phone": "9876543210",
+        "email": "rohan@example.com",
+        "course": "10th Standard (SSLC)",
+        "message": "Interested in batch timings and science materials"
+    }
+]
