@@ -85,7 +85,7 @@
           <i data-lucide="award" class="w-4 h-4"></i>
         </span>
         <div>
-          <div class="text-xs text-amber-400 font-bold uppercase">State Syllabus Experts</div>
+          <div class="text-xs text-amber-400 font-bold uppercase">State, CBSE & ICSE Experts</div>
           <div class="text-[11px] text-slate-300">Targeted Board Prep</div>
         </div>
       </div>

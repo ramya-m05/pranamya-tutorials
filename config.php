@@ -35,7 +35,7 @@ $courses = [
         'id' => '8th-std',
         'title' => '8th Standard',
         'kannada_title' => '8 ನೇ ತರಗತಿ',
-        'badge' => 'State Syllabus',
+        'badge' => 'State / CBSE / ICSE',
         'color_gradient' => 'from-blue-600 to-indigo-700',
         'bg_light' => '#EEF2FF',
         'accent' => '#3B82F6',
@@ -51,7 +51,7 @@ $courses = [
         'id' => '9th-std',
         'title' => '9th Standard',
         'kannada_title' => '9 ನೇ ತರಗತಿ',
-        'badge' => 'State Syllabus',
+        'badge' => 'State / CBSE / ICSE',
         'color_gradient' => 'from-cyan-600 to-teal-700',
         'bg_light' => '#ECFEFF',
         'accent' => '#06B6D4',
@@ -59,20 +59,20 @@ $courses = [
             'In-depth Subject Learning',
             'Dedicated Doubt Solving',
             'Weekly Performance Tests',
-            'Early SSLC Exam Prep'
+            'Early Board Exam Prep'
         ],
         'description' => 'Comprehensive coverage bridging middle school concepts to board exam readiness with step-by-step problem solving.'
     ],
     [
         'id' => '10th-std',
-        'title' => '10th Standard (SSLC)',
-        'kannada_title' => '10 ನೇ ತರಗತಿ (SSLC)',
-        'badge' => 'Board Exam Special',
+        'title' => '10th Standard (SSLC/Board)',
+        'kannada_title' => '10 ನೇ ತರಗತಿ (State/CBSE/ICSE)',
+        'badge' => 'State / CBSE / ICSE',
         'color_gradient' => 'from-red-600 to-rose-800',
         'bg_light' => '#FFF1F2',
         'accent' => '#E11D48',
         'features' => [
-            'SSLC Board Exam Focus',
+            'State / CBSE / ICSE Exam Focus',
             'Important Questions & Blueprints',
             'Time Management Strategies',
             'Continuous Performance Tracking'
@@ -118,7 +118,7 @@ $why_us_items = [
     [
         'num' => '01',
         'title' => 'Experienced Faculties',
-        'desc' => 'Seasoned educators with over 12+ years of expertise in State Board curriculum delivering clear, concise explanations.',
+        'desc' => 'Seasoned educators with over 12+ years of expertise in State, CBSE & ICSE Board curriculum delivering clear, concise explanations.',
         'icon' => 'user-check'
     ],
     [

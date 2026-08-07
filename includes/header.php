@@ -7,8 +7,8 @@ require_once __DIR__ . '/../config.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo SITE_NAME; ?> — <?php echo SITE_TAGLINE; ?></title>
-  <meta name="description" content="Pranamya Tutorials - Top Private Coaching Institute in Rajajinagar, Bengaluru for 8th, 9th, 10th SSLC, 1st PUC & 2nd PUC State Syllabus. Strong Basics. Bright Future.">
-  <meta name="keywords" content="Pranamya Tutorials, Coaching Institute Rajajinagar, SSLC Tuition Bengaluru, 1st PUC Science Commerce, 2nd PUC Board Exam, State Syllabus Tuitions Bengaluru">
+  <meta name="description" content="Pranamya Tutorials - Top Private Coaching Institute in Rajajinagar, Bengaluru for 8th, 9th, 10th (State, CBSE & ICSE), 1st PUC & 2nd PUC. Strong Basics. Bright Future.">
+  <meta name="keywords" content="Pranamya Tutorials, Coaching Institute Rajajinagar, SSLC Tuition Bengaluru, 8th 9th 10th CBSE ICSE State, 1st PUC Science Commerce, 2nd PUC Board Exam, State CBSE ICSE Tuitions Bengaluru">
   
   <!-- Tailwind CSS CDN for Utility Classes -->
   <script src="https://cdn.tailwindcss.com"></script>
