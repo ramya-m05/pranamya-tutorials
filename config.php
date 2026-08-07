@@ -157,58 +157,30 @@ $why_us_items = [
 $faculty_members = [
     [
         'id' => 1,
-        'name' => 'Shishira Bhat',
+        'name' => 'Abhishek M R',
         'designation' => 'Founder & CEO',
-        'qualification' => 'M.Sc. (Physics), B.Ed.',
+        'qualification' => 'M.Com, (Ph.D.)',
         'experience' => '16+ Years Experience',
-        'subjects' => 'Physics (10th, 1st & 2nd PUC)',
-        'image_url' => 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800',
+        'subjects' => 'Commerce (10th, 1st & 2nd PUC)',
+        'image_url' => 'assets/images/Abhishek.jpeg',
         'image_bg' => 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
-        'avatar_initials' => 'SB',
+        'avatar_initials' => 'AM',
         'linkedin_url' => 'https://linkedin.com',
-        'bio' => 'Shishira Bhat is renowned for turning complex Physics concepts into intuitive visual stories. He has guided over 3,000+ students to achieve top scores in board examinations.',
-        'quote' => 'Physics is not about memorizing formulas; it is about learning how to see the universe work.'
+        'bio' => 'Abhishek M R is a passionate Commerce educator with over 16 years of teaching experience. He is known for simplifying Accounting, Business Studies, and Economics through practical examples and concept-driven learning, helping students build confidence and achieve excellent academic results.',
+        'quote' => 'At Pranamya Tutorials, we believe that education is the most powerful tool for shaping a student\'s future. Our mission is to provide quality education, strengthen conceptual understanding, and inspire confidence in every learner. We focus on building strong fundamentals, encouraging consistent practice, and supporting the overall development of each student. Our dedicated approach ensures that students are well-prepared not only for board examinations but also for future academic and professional success.'
     ],
     [
         'id' => 2,
-        'name' => 'Suraj Vijay Shetty',
+        'name' => 'Mohammad Rafi',
         'designation' => 'Co-Founder & Director',
-        'qualification' => 'M.Sc. (Mathematics), Gold Medalist',
-        'experience' => '14+ Years Experience',
-        'subjects' => 'Mathematics (8th, 9th, 10th & PUC)',
-        'image_url' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800',
+        'qualification' => 'M.Sc, B.Ed, K-SET, K-TET',
+        'experience' => '15+ Years Experience',
+        'subjects' => 'Science Faculty',
+        'image_url' => 'assets/images/Rafi.png',
         'image_bg' => 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%)',
-        'avatar_initials' => 'SS',
+        'avatar_initials' => 'MR',
         'linkedin_url' => 'https://linkedin.com',
-        'bio' => 'Suraj Vijay Shetty specializes in building mental math agility, eliminating math phobia, and fostering problem-solving confidence among students.',
-        'quote' => 'Mathematics is a language of logic. Once you grasp the basics, every problem has a key waiting to unlock it.'
-    ],
-    [
-        'id' => 3,
-        'name' => 'Dr. Vinay Kumar',
-        'designation' => 'Chemistry Specialist',
-        'qualification' => 'Ph.D. in Organic Chemistry',
-        'experience' => '12+ Years Experience',
-        'subjects' => 'Chemistry (9th, 10th, 1st & 2nd PUC)',
-        'image_url' => 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800',
-        'image_bg' => 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
-        'avatar_initials' => 'VK',
-        'linkedin_url' => 'https://linkedin.com',
-        'bio' => 'Dr. Vinay simplifies organic reaction mechanisms and chemical bonding using practical memory tricks and step-by-step reaction roadmaps.',
-        'quote' => 'Understand the fundamental reactions, and Chemistry transforms from a challenge into your favorite subject.'
-    ],
-    [
-        'id' => 4,
-        'name' => 'Mrs. Archana K. Bhat',
-        'designation' => 'Biology & Science Lead',
-        'qualification' => 'M.Sc. (Botany & Zoology)',
-        'experience' => '11+ Years Experience',
-        'subjects' => 'Biology & Science (8th, 9th, 10th & PUC)',
-        'image_url' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800',
-        'image_bg' => 'linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%)',
-        'avatar_initials' => 'AB',
-        'linkedin_url' => 'https://linkedin.com',
-        'bio' => 'Mrs. Archana combines high-definition diagrammatic representations with memory techniques to help students achieve flawless scores in Biology.',
-        'quote' => 'Clear diagrams and precise anatomical logic are the secrets to mastering life sciences.'
+        'bio' => 'Mohammad Rafi is renowned for transforming abstract Science concepts into clear, visual explanations. With 15 years of experience, he specializes in making Physics and Chemistry intuitive, ensuring students don\'t just memorize formulas—they understand the logic behind them.',
+        'quote' => 'At Pranamya Tutorials, we believe that science is not just about learning formulas and facts—it\'s about understanding the world through curiosity, observation, and logical thinking. Our goal is to make every concept in Physics, Chemistry, and General Science simple, engaging, and easy to understand.'
     ]
 ];
