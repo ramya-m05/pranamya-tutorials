@@ -16,7 +16,7 @@
   --text-muted:   #A07070;
   --shadow-red:   rgba(139, 26, 26, 0.4);
   --shadow-gold:  rgba(212, 160, 23, 0.35);
-  --gradient-hero:    linear-gradient(135deg, #5C0E0E 0%, #8B1A1A 40%, #B22222 70%, #5C0E0E 100%);
+  --gradient-hero:    linear-gradient(135deg, #ba5757 0%, #934848 40%, #B22222 70%, #a84b4b 100%);
   --gradient-gold:    linear-gradient(135deg, #D4A017, #FFD700, #D4A017);
   --gradient-card:    linear-gradient(145deg, #2D0A0A, #3D1010);
   --transition:   all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -282,7 +282,7 @@ img { max-width: 100%; display: block; }
   inset: 0;
   background: var(--gradient-hero);
   background-size: 400% 400%;
-  animation: gradientShift 8s ease infinite;
+  animation: gradientShift 4s ease infinite;
 }
 .hero-overlay {
   position: absolute;
