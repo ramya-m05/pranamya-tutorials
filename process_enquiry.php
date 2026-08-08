@@ -62,6 +62,29 @@ if (file_exists($log_file)) {
 array_unshift($existing_enquiries, $enquiry_data);
 file_put_contents($log_file, json_encode($existing_enquiries, JSON_PRETTY_PRINT));
 
+// 1b. Post to Google Form (saves to linked Google Sheet)
+$google_form_url = 'https://docs.google.com/forms/d/e/1FAIpQLSdqIAAxOGWxkEl74fl-yeLbf9YNix211acVY2r-hJcAwp5HGw/formResponse';
+$google_fields = [
+    'entry.2005620554' => $student_name,
+    'entry.1065046570' => $course,
+    'entry.1166974658' => $phone,
+    'entry.839337160'  => $message,
+    'entry.985106537' => $email,
+    'entry.949364254' => $parent_name
+
+];
+
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $google_form_url);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($google_fields));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+@curl_exec($ch);
+curl_close($ch);
+
 // 2. Mail Transport Attempt (PHP mail)
 $to = INSTITUTE_EMAIL;
 $subject = "New Admission Enquiry [{$enquiry_id}] - {$student_name} ({$course})";

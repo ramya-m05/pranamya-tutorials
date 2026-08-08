@@ -122,29 +122,45 @@ function submitEnquiryForm(e) {
   if (btnText) btnText.textContent = 'Processing Enquiry...';
   if (submitBtn) submitBtn.disabled = true;
 
-  setTimeout(() => {
-    const studentName = document.getElementById('student_name')?.value || '';
-    const parentName = document.getElementById('parent_name')?.value || 'N/A';
-    const phone = document.getElementById('phone')?.value || '';
-    const email = document.getElementById('email')?.value || 'Not Provided';
-    const course = document.getElementById('course')?.value || '';
-    const message = document.getElementById('message')?.value || '';
+  const studentName = document.getElementById('student_name')?.value || '';
+  const parentName = document.getElementById('parent_name')?.value || 'N/A';
+  const phone = document.getElementById('phone')?.value || '';
+  const email = document.getElementById('email')?.value || 'Not Provided';
+  const course = document.getElementById('course')?.value || '';
+  const message = document.getElementById('message')?.value || '';
 
-    const randomNum = Math.floor(1000 + Math.random() * 9000);
-    const enquiryId = `PT-${new Date().getFullYear()}-${randomNum}`;
-    const timestamp = new Date().toLocaleString();
+  const randomNum = Math.floor(1000 + Math.random() * 9000);
+  const enquiryId = `PT-${new Date().getFullYear()}-${randomNum}`;
+  const timestamp = new Date().toLocaleString();
 
-    const enquiryData = {
-      enquiryId,
-      timestamp,
-      studentName,
-      parentName,
-      phone,
-      email,
-      course,
-      message
-    };
+  const enquiryData = {
+    enquiryId,
+    timestamp,
+    studentName,
+    parentName,
+    phone,
+    email,
+    course,
+    message
+  };
 
+  // Submit to Google Form (saves into Google Sheet linked to the Google Form)
+  const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdqIAAxOGWxkEl74fl-yeLbf9YNix211acVY2r-hJcAwp5HGw/formResponse';
+  
+  const googleFormData = new FormData();
+  googleFormData.append('entry.2005620554', studentName); // Name
+  googleFormData.append('entry.1065046570', course);      // Class/Standard
+  googleFormData.append('entry.1166974658', phone);       // Phone Number
+  googleFormData.append('entry.839337160', message);      // Message/Queries
+
+  // Send request using mode: 'no-cors' so Google Form accepts the submission seamlessly
+  fetch(googleFormUrl, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: googleFormData
+  }).catch(err => {
+    console.warn('Google Form submission error:', err);
+  }).finally(() => {
     // Save to LocalStorage
     try {
       const existingEnquiries = JSON.parse(localStorage.getItem('pranamya_enquiries') || '[]');
@@ -174,7 +190,7 @@ function submitEnquiryForm(e) {
 
     if (btnText) btnText.textContent = 'Submit Enquiry Now';
     if (submitBtn) submitBtn.disabled = false;
-  }, 600);
+  });
 }
 
 function closeEnquirySuccessModal() {
