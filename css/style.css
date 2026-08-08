@@ -16,7 +16,7 @@
   --text-muted:   #A07070;
   --shadow-red:   rgba(139, 26, 26, 0.4);
   --shadow-gold:  rgba(212, 160, 23, 0.35);
-  --gradient-hero:    linear-gradient(135deg, #ba5757 0%, #934848 40%, #B22222 70%, #a84b4b 100%);
+  --gradient-hero:    linear-gradient(135deg, #caa4a4ff 0%, #bb9494ff 40%, #b88e8eff 70%, #9f7b7bff 100%);
   --gradient-gold:    linear-gradient(135deg, #D4A017, #FFD700, #D4A017);
   --gradient-card:    linear-gradient(145deg, #2D0A0A, #3D1010);
   --transition:   all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -288,14 +288,14 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at 20% 50%, rgba(212,160,23,0.12) 0%, transparent 60%),
-              radial-gradient(ellipse at 80% 20%, rgba(139,26,26,0.6) 0%, transparent 50%);
+              radial-gradient(ellipse at 80% 20%, rgba(121, 103, 103, 0.6) 0%, transparent 50%);
 }
 .hero-grid-pattern {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(212,160,23,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212,160,23,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(226, 213, 213, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 189, 172, 0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 .hero-content {
