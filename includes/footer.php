@@ -14,7 +14,7 @@
       <!-- Column 1: Institute Identity & Address -->
       <div class="space-y-3">
         <div class="flex items-center gap-3">
-          <img src="assets/images/logo.svg" alt="Pranamya Tutorials Logo" class="w-10 h-10 object-contain">
+          <img src="assets/images/logo.png" alt="Pranamya Tutorials Logo" class="w-10 h-10 object-contain">
           <div>
             <div class="font-extrabold text-lg text-white leading-none">PRANAMYA TUTORIALS</div>
             <div class="kannada-text text-amber-400 text-xs font-semibold"><?php echo SITE_KANNADA_NAME; ?></div>

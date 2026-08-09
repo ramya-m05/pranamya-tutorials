@@ -10,6 +10,10 @@ require_once __DIR__ . '/../config.php';
   <meta name="description" content="Pranamya Tutorials - Top Private Coaching Institute in Rajajinagar, Bengaluru for 8th, 9th, 10th (State, CBSE & ICSE), 1st PUC & 2nd PUC. Strong Basics. Bright Future.">
   <meta name="keywords" content="Pranamya Tutorials, Coaching Institute Rajajinagar, SSLC Tuition Bengaluru, 8th 9th 10th CBSE ICSE State, 1st PUC Science Commerce, 2nd PUC Board Exam, State CBSE ICSE Tuitions Bengaluru">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="shortcut icon" href="assets/images/logo.png">
+
   <!-- Tailwind CSS CDN for Utility Classes -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -70,8 +74,8 @@ require_once __DIR__ . '/../config.php';
         
         <!-- Brand Logo & Name -->
         <a href="index.php" class="flex items-center gap-3 group">
-          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full p-0.5 bg-gradient-to-tr from-red-600 via-amber-400 to-red-800 shadow-md group-hover:scale-105 transition-transform duration-300">
-            <img src="assets/images/logo.svg" alt="Pranamya Tutorials Logo" class="w-full h-full object-contain">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+            <img src="assets/images/logo.png" alt="Pranamya Tutorials Logo" class="w-full h-full object-contain">
           </div>
           <div class="flex flex-col">
             <div class="flex items-center gap-2">
