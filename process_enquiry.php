@@ -56,7 +56,24 @@ if ($student_name === '' || $phone === '' || $course === '') {
 
 
 // --------------------------------------------------
-// 4. Validate email if provided
+// 4. Validate phone number
+// --------------------------------------------------
+
+// Must contain exactly 10 digits
+if (!preg_match('/^[0-9]{10}$/', $phone)) {
+    http_response_code(400);
+
+    echo json_encode([
+        'success' => false,
+        'message' => 'Please enter a valid 10-digit phone number.'
+    ]);
+
+    exit;
+}
+
+
+// --------------------------------------------------
+// 5. Validate email if provided
 // --------------------------------------------------
 
 if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -72,7 +89,7 @@ if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 
 // --------------------------------------------------
-// 5. Generate enquiry ID
+// 6. Generate enquiry ID
 // --------------------------------------------------
 
 $enquiry_id = 'PT-' . date('Ymd-His') . '-' . random_int(100, 999);
@@ -81,7 +98,7 @@ $timestamp = date('Y-m-d H:i:s');
 
 
 // --------------------------------------------------
-// 6. Prepare enquiry data
+// 7. Prepare enquiry data
 // --------------------------------------------------
 
 $enquiry_data = [
@@ -97,7 +114,7 @@ $enquiry_data = [
 
 
 // --------------------------------------------------
-// 7. Save enquiry to JSON
+// 8. Save enquiry to JSON
 // --------------------------------------------------
 
 $data_dir = __DIR__ . '/data';
@@ -155,7 +172,7 @@ if ($json_result === false) {
 
 
 // --------------------------------------------------
-// 8. Submit to Google Form via Apps Script Web App
+// 9. Submit to Google Form via Apps Script Web App
 // --------------------------------------------------
 
 $google_script_url = defined('GOOGLE_FORM_WEB_APP_URL')
@@ -230,7 +247,7 @@ if (!empty($google_script_url)) {
 }
 
 // --------------------------------------------------
-// 9. Send notification email
+// 10. Send notification email
 // --------------------------------------------------
 
 $to = INSTITUTE_EMAIL;
@@ -271,7 +288,7 @@ $mail_sent = @mail(
 
 
 // --------------------------------------------------
-// 10. Return response to JavaScript
+// 11. Return response to JavaScript
 // --------------------------------------------------
 
 // The JSON file is the primary storage.
