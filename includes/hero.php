@@ -9,9 +9,9 @@
 ?>
 <section id="hero" class="hero-container relative">
   <!-- Background Image Slides with Auto-Advance -->
-  <div class="hero-slide active" style="background-image: url('assets/images/hero1.svg');"></div>
-  <div class="hero-slide" style="background-image: url('assets/images/hero2.svg');"></div>
-  <div class="hero-slide" style="background-image: url('assets/images/hero3.svg');"></div>
+  <div class="hero-slide active" style="background-image: url('assets/images/class1.png');"></div>
+  <div class="hero-slide" style="background-image: url('assets/images/class2.png');"></div>
+  <div class="hero-slide" style="background-image: url('assets/images/class3.png');"></div>
 
   <!-- Dark Gradient Overlay for Text Legibility -->
   <div class="absolute inset-0 hero-overlay flex flex-col justify-between p-4 sm:p-8 lg:p-12 text-white">

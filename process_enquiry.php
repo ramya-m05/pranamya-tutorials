@@ -1,120 +1,299 @@
 <?php
 /**
- * PHP Backend Enquiry Handler
- * Validates submission, logs to JSON database, and triggers notification emails.
+ * Pranamya Tutorials - PHP Backend Enquiry Handler
+ *
+ * Validates enquiry submissions, saves them to a JSON file,
+ * submits the enquiry to Google Forms, and attempts email notification.
  */
 
 header('Content-Type: application/json; charset=utf-8');
+
 require_once __DIR__ . '/config.php';
 
-// Only accept POST requests
+
+// --------------------------------------------------
+// 1. Only accept POST requests
+// --------------------------------------------------
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+
     echo json_encode([
         'success' => false,
         'message' => 'Invalid request method.'
     ]);
+
     exit;
 }
 
-// Retrieve & sanitize input
-$student_name = filter_input(INPUT_POST, 'student_name', FILTER_SANITIZE_SPECIAL_CHARS);
-$parent_name  = filter_input(INPUT_POST, 'parent_name', FILTER_SANITIZE_SPECIAL_CHARS);
-$phone        = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_SPECIAL_CHARS);
-$email        = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-$course       = filter_input(INPUT_POST, 'course', FILTER_SANITIZE_SPECIAL_CHARS);
-$message      = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_SPECIAL_CHARS);
 
-// Validation
-if (empty($student_name) || empty($phone) || empty($course)) {
+// --------------------------------------------------
+// 2. Retrieve form data
+// --------------------------------------------------
+
+$student_name = trim($_POST['student_name'] ?? '');
+$parent_name  = trim($_POST['parent_name'] ?? '');
+$phone        = trim($_POST['phone'] ?? '');
+$email        = trim($_POST['email'] ?? '');
+$course       = trim($_POST['course'] ?? '');
+$message      = trim($_POST['message'] ?? '');
+
+
+// --------------------------------------------------
+// 3. Validate required fields
+// --------------------------------------------------
+
+if ($student_name === '' || $phone === '' || $course === '') {
+    http_response_code(400);
+
     echo json_encode([
         'success' => false,
         'message' => 'Please fill in all required fields (Student Name, Phone Number, and Class).'
     ]);
+
     exit;
 }
 
-$enquiry_id = 'PT-' . date('Ymd-His') . '-' . rand(100, 999);
-$timestamp  = date('Y-m-d H:i:s');
+
+// --------------------------------------------------
+// 4. Validate email if provided
+// --------------------------------------------------
+
+if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+
+    echo json_encode([
+        'success' => false,
+        'message' => 'Please enter a valid email address.'
+    ]);
+
+    exit;
+}
+
+
+// --------------------------------------------------
+// 5. Generate enquiry ID
+// --------------------------------------------------
+
+$enquiry_id = 'PT-' . date('Ymd-His') . '-' . random_int(100, 999);
+
+$timestamp = date('Y-m-d H:i:s');
+
+
+// --------------------------------------------------
+// 6. Prepare enquiry data
+// --------------------------------------------------
 
 $enquiry_data = [
     'enquiry_id'   => $enquiry_id,
     'timestamp'    => $timestamp,
     'student_name' => $student_name,
-    'parent_name'  => $parent_name ?: 'N/A',
+    'parent_name'  => $parent_name !== '' ? $parent_name : 'N/A',
     'phone'        => $phone,
-    'email'        => $email ?: 'Not Provided',
+    'email'        => $email !== '' ? $email : 'Not Provided',
     'course'       => $course,
-    'message'      => $message ?: 'No additional comments.'
+    'message'      => $message !== '' ? $message : 'No additional comments.'
 ];
 
-// 1. Save to JSON Data Log
+
+// --------------------------------------------------
+// 7. Save enquiry to JSON
+// --------------------------------------------------
+
 $data_dir = __DIR__ . '/data';
+
 if (!is_dir($data_dir)) {
-    mkdir($data_dir, 0755, true);
+    if (!mkdir($data_dir, 0755, true) && !is_dir($data_dir)) {
+        http_response_code(500);
+
+        echo json_encode([
+            'success' => false,
+            'message' => 'Unable to create enquiry data directory.'
+        ]);
+
+        exit;
+    }
 }
+
 $log_file = $data_dir . '/enquiries.json';
 
 $existing_enquiries = [];
+
 if (file_exists($log_file)) {
     $json_content = file_get_contents($log_file);
-    $existing_enquiries = json_decode($json_content, true) ?: [];
+
+    if ($json_content !== false && trim($json_content) !== '') {
+        $decoded = json_decode($json_content, true);
+
+        if (is_array($decoded)) {
+            $existing_enquiries = $decoded;
+        }
+    }
 }
+
 array_unshift($existing_enquiries, $enquiry_data);
-file_put_contents($log_file, json_encode($existing_enquiries, JSON_PRETTY_PRINT));
 
-// 1b. Post to Google Form (saves to linked Google Sheet)
-$google_form_url = 'https://docs.google.com/forms/d/e/1FAIpQLSdqIAAxOGWxkEl74fl-yeLbf9YNix211acVY2r-hJcAwp5HGw/formResponse';
-$google_fields = [
-    'entry.2005620554' => $student_name,
-    'entry.1065046570' => $course,
-    'entry.1166974658' => $phone,
-    'entry.839337160'  => $message,
-    'entry.985106537' => $email,
-    'entry.949364254' => $parent_name
+$json_result = file_put_contents(
+    $log_file,
+    json_encode(
+        $existing_enquiries,
+        JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
+    ),
+    LOCK_EX
+);
 
-];
+if ($json_result === false) {
+    http_response_code(500);
+
+    echo json_encode([
+        'success' => false,
+        'message' => 'Unable to save the enquiry.'
+    ]);
+
+    exit;
+}
 
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $google_form_url);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($google_fields));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-@curl_exec($ch);
-curl_close($ch);
+// --------------------------------------------------
+// 8. Submit to Google Form via Apps Script Web App
+// --------------------------------------------------
 
-// 2. Mail Transport Attempt (PHP mail)
+$google_script_url = defined('GOOGLE_FORM_WEB_APP_URL')
+    ? GOOGLE_FORM_WEB_APP_URL
+    : '';
+
+$google_success = false;
+$google_http_code = 0;
+$google_error = '';
+$google_errno = 0;
+$google_response = '';
+
+if (!empty($google_script_url)) {
+
+    $google_curl = curl_init($google_script_url);
+
+    curl_setopt_array($google_curl, [
+        CURLOPT_POST => true,
+
+        CURLOPT_POSTFIELDS => json_encode(
+            $enquiry_data,
+            JSON_UNESCAPED_UNICODE
+        ),
+
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+
+        CURLOPT_TIMEOUT => 15,
+        CURLOPT_CONNECTTIMEOUT => 5,
+
+        CURLOPT_HTTPHEADER => [
+            'Content-Type: application/json'
+        ]
+    ]);
+
+    $google_response = curl_exec($google_curl);
+
+    $google_error = curl_error($google_curl);
+
+    $google_errno = curl_errno($google_curl);
+
+    $google_http_code = curl_getinfo(
+        $google_curl,
+        CURLINFO_HTTP_CODE
+    );
+
+    curl_close($google_curl);
+
+
+    // Check HTTP response
+    if (
+        $google_response !== false &&
+        empty($google_error) &&
+        $google_http_code >= 200 &&
+        $google_http_code < 300
+    ) {
+
+        // Apps Script should return JSON
+        $google_result = json_decode(
+            $google_response,
+            true
+        );
+
+        if (
+            is_array($google_result) &&
+            isset($google_result['success']) &&
+            $google_result['success'] === true
+        ) {
+            $google_success = true;
+        }
+    }
+}
+
+// --------------------------------------------------
+// 9. Send notification email
+// --------------------------------------------------
+
 $to = INSTITUTE_EMAIL;
-$subject = "New Admission Enquiry [{$enquiry_id}] - {$student_name} ({$course})";
 
-$mail_body = "========================================\n";
+$subject =
+    "New Admission Enquiry [{$enquiry_id}] - {$student_name} ({$course})";
+
+$mail_body  = "========================================\n";
 $mail_body .= "NEW ADMISSION ENQUIRY - PRANAMYA TUTORIALS\n";
 $mail_body .= "========================================\n\n";
+
 $mail_body .= "Enquiry Reference ID: {$enquiry_id}\n";
 $mail_body .= "Date & Time: {$timestamp}\n\n";
+
 $mail_body .= "Student Name: {$student_name}\n";
-$mail_body .= "Parent Name: " . ($parent_name ?: 'N/A') . "\n";
+$mail_body .= "Parent Name: " . ($parent_name !== '' ? $parent_name : 'N/A') . "\n";
 $mail_body .= "Contact Phone: {$phone}\n";
-$mail_body .= "Email Address: " . ($email ?: 'N/A') . "\n";
+$mail_body .= "Email Address: " . ($email !== '' ? $email : 'N/A') . "\n";
 $mail_body .= "Interested Grade/Course: {$course}\n\n";
-$mail_body .= "Message/Query:\n{$message}\n\n";
+
+$mail_body .= "Message/Query:\n";
+$mail_body .= ($message !== '' ? $message : 'No additional comments.') . "\n\n";
+
 $mail_body .= "----------------------------------------\n";
 $mail_body .= "Location: Rajajinagar, Bengaluru - 560010\n";
 
-$headers = "From: noreply@pranamyatutorials.com\r\n";
-$headers .= "Reply-To: " . ($email ?: INSTITUTE_EMAIL) . "\r\n";
+$headers  = "From: noreply@pranamyatutorials.com\r\n";
+$headers .= "Reply-To: " . ($email !== '' ? $email : INSTITUTE_EMAIL) . "\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
+$headers .= "\r\n";
 
-// Attempt sending email (will log result)
-$mail_sent = @mail($to, $subject, $mail_body, $headers);
+$mail_sent = @mail(
+    $to,
+    $subject,
+    $mail_body,
+    $headers
+);
 
+
+// --------------------------------------------------
+// 10. Return response to JavaScript
+// --------------------------------------------------
+
+// The JSON file is the primary storage.
+// Google Forms and email are secondary integrations.
 echo json_encode([
     'success' => true,
-    'message' => 'Thank you! Your enquiry has been received successfully. A notification email has been dispatched to pranamyatutorials@gmail.com.',
+    'message' => 'Enquiry received successfully.',
+
     'enquiry_id' => $enquiry_id,
-    'mail_dispatched' => true,
+
+    'google_form_submitted' => $google_success,
+
+    'google_http_code' => $google_http_code,
+
+    'google_error' => $google_error,
+
+    'google_errno' => $google_errno,
+
+    'google_response' => $google_response,
+
     'data' => $enquiry_data
 ]);
+
 exit;
+?>

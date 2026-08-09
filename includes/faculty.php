@@ -72,9 +72,9 @@
             
             <div class="flex items-center justify-between mt-4">
               <!-- LinkedIn Icon Button (Bottom Left matching wireframe) -->
-              <div onclick="event.stopPropagation(); window.open('<?php echo $fac['linkedin_url']; ?>', '_blank')" class="w-10 h-10 rounded-full bg-[#0077b5] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                <i data-lucide="linkedin" class="w-5 h-5 fill-current stroke-none"></i>
-              </div>
+              <!-- <div onclick="event.stopPropagation(); window.open('<?php echo $fac['linkedin_url']; ?>', '_blank')" class="w-10 h-10 rounded-full bg-[#0077b5] text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </div> -->
 
               <!-- Click hint -->
               <span class="text-xs font-bold text-amber-400 flex items-center gap-1 group-hover:underline">

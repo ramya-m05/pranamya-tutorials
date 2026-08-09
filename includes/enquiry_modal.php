@@ -176,7 +176,7 @@
     <p class="kannada-text text-amber-600 font-bold mb-3">ನಿಮ್ಮ ವಿಚಾರಣೆ ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಕೆಯಾಗಿದೆ</p>
     
     <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 text-left text-xs space-y-2 mb-6">
-      <div class="flex justify-between border-b border-slate-200 pb-2">
+      <!-- <div class="flex justify-between border-b border-slate-200 pb-2">
         <span class="text-slate-500">Enquiry Ref ID:</span>
         <span id="modalEnquiryId" class="font-bold text-red-600">PT-2026-001</span>
       </div>
@@ -185,7 +185,7 @@
         <span class="font-bold text-emerald-600 flex items-center gap-1">
           <i data-lucide="mail-check" class="w-3.5 h-3.5"></i> Sent to pranamyatutorials@gmail.com
         </span>
-      </div>
+      </div> -->
       <div id="modalEnquiryMsg" class="text-slate-600 pt-1">
         We have dispatched an email and recorded your query. Our academic counselor will contact you shortly.
       </div>

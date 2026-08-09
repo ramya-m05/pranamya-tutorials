@@ -112,8 +112,8 @@ function preselectCourse(courseName) {
   }
 }
 
-/* Client-Side JavaScript Enquiry Submission */
-function submitEnquiryForm(e) {
+/* JavaScript & PHP Backend Enquiry Submission */
+async function submitEnquiryForm(e) {
   e.preventDefault();
   const form = e.target;
   const submitBtn = document.getElementById('submitEnquiryBtn');
@@ -122,75 +122,68 @@ function submitEnquiryForm(e) {
   if (btnText) btnText.textContent = 'Processing Enquiry...';
   if (submitBtn) submitBtn.disabled = true;
 
+  const formData = new FormData(form);
+
   const studentName = document.getElementById('student_name')?.value || '';
-  const parentName = document.getElementById('parent_name')?.value || 'N/A';
   const phone = document.getElementById('phone')?.value || '';
-  const email = document.getElementById('email')?.value || 'Not Provided';
   const course = document.getElementById('course')?.value || '';
-  const message = document.getElementById('message')?.value || '';
 
-  const randomNum = Math.floor(1000 + Math.random() * 9000);
-  const enquiryId = `PT-${new Date().getFullYear()}-${randomNum}`;
-  const timestamp = new Date().toLocaleString();
+  try {
+    const response = await fetch('process_enquiry.php', {
+      method: 'POST',
+      body: formData
+    });
 
-  const enquiryData = {
-    enquiryId,
-    timestamp,
-    studentName,
-    parentName,
-    phone,
-    email,
-    course,
-    message
-  };
+    const result = await response.json();
 
-  // Submit to Google Form (saves into Google Sheet linked to the Google Form)
-  const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdqIAAxOGWxkEl74fl-yeLbf9YNix211acVY2r-hJcAwp5HGw/formResponse';
-  
-  const googleFormData = new FormData();
-  googleFormData.append('entry.2005620554', studentName); // Name
-  googleFormData.append('entry.1065046570', course);      // Class/Standard
-  googleFormData.append('entry.1166974658', phone);       // Phone Number
-  googleFormData.append('entry.839337160', message);      // Message/Queries
+    if (result.success) {
+      const enquiryId = result.enquiry_id || `PT-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
 
-  // Send request using mode: 'no-cors' so Google Form accepts the submission seamlessly
-  fetch(googleFormUrl, {
-    method: 'POST',
-    mode: 'no-cors',
-    body: googleFormData
-  }).catch(err => {
-    console.warn('Google Form submission error:', err);
-  }).finally(() => {
-    // Save to LocalStorage
-    try {
-      const existingEnquiries = JSON.parse(localStorage.getItem('pranamya_enquiries') || '[]');
-      existingEnquiries.unshift(enquiryData);
-      localStorage.setItem('pranamya_enquiries', JSON.stringify(existingEnquiries));
-    } catch (err) {
-      console.warn('LocalStorage error:', err);
+      // Save to LocalStorage as additional backup
+      try {
+        const existingEnquiries = JSON.parse(localStorage.getItem('pranamya_enquiries') || '[]');
+        existingEnquiries.unshift({
+          enquiryId,
+          timestamp: new Date().toLocaleString(),
+          studentName,
+          parentName: document.getElementById('parent_name')?.value || 'N/A',
+          phone,
+          email: document.getElementById('email')?.value || 'Not Provided',
+          course,
+          message: document.getElementById('message')?.value || ''
+        });
+        localStorage.setItem('pranamya_enquiries', JSON.stringify(existingEnquiries));
+      } catch (err) {
+        console.warn('LocalStorage error:', err);
+      }
+
+      // Update modal details
+      const modalIdElem = document.getElementById('modalEnquiryId');
+      const modalMsgElem = document.getElementById('modalEnquiryMsg');
+
+      if (modalIdElem) modalIdElem.textContent = enquiryId;
+      if (modalMsgElem) {
+        modalMsgElem.textContent = `Thank you, ${studentName}! Your inquiry for ${course} has been registered successfully. Our team will call you at ${phone} shortly.`;
+      }
+
+      const modal = document.getElementById('enquirySuccessModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      showToast('Enquiry submitted successfully!');
+      form.reset();
+    } else {
+      showToast(result.message || 'Error submitting enquiry. Please try again.');
     }
-
-    // Update modal details
-    const modalIdElem = document.getElementById('modalEnquiryId');
-    const modalMsgElem = document.getElementById('modalEnquiryMsg');
-    
-    if (modalIdElem) modalIdElem.textContent = enquiryId;
-    if (modalMsgElem) {
-      modalMsgElem.textContent = `Thank you, ${studentName}! Your inquiry for ${course} has been registered successfully. Our team will call you at ${phone} shortly.`;
-    }
-
-    const modal = document.getElementById('enquirySuccessModal');
-    if (modal) {
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    showToast('Enquiry submitted successfully!');
-    form.reset();
-
+  } catch (err) {
+    console.error('Submission error:', err);
+    showToast('Failed to connect to server. Please try again.');
+  } finally {
     if (btnText) btnText.textContent = 'Submit Enquiry Now';
     if (submitBtn) submitBtn.disabled = false;
-  });
+  }
 }
 
 function closeEnquirySuccessModal() {

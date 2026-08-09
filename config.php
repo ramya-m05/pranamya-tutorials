@@ -16,6 +16,20 @@ define('PHONE_2', '96203 20309');
 define('PHONE_3', '90087 35478');
 define('INSTITUTE_EMAIL', 'pranamyatutorials@gmail.com');
 
+// Google Apps Script Web App Integration
+define(
+    'GOOGLE_FORM_WEB_APP_URL',
+    'https://script.google.com/macros/s/AKfycbyZWD3trdiRn2obVB3DicHAaj-1rMUENcNQ3zGn_Hzxd7oswjmLYKaqqnUBzcZIBrTVsw/exec'
+);
+// Google Form Field Entry IDs
+define('GOOGLE_FORM_ENTRY_STUDENT_NAME', 'entry.2005620554');
+define('GOOGLE_FORM_ENTRY_PARENT_NAME', 'entry.949364254');
+define('GOOGLE_FORM_ENTRY_COURSE', 'entry.1065046570');
+define('GOOGLE_FORM_ENTRY_PHONE', 'entry.1166974658');
+define('GOOGLE_FORM_ENTRY_EMAIL', 'entry.985106537');
+define('GOOGLE_FORM_ENTRY_MESSAGE', 'entry.839337160');
+
+
 // Address Information
 define('ADDRESS_STREET', '#637/B, 1st K Block, E Block, Dr. Rajkumar Road, 2nd Stage');
 define('ADDRESS_AREA', 'Rajajinagar');
@@ -160,27 +174,27 @@ $faculty_members = [
         'name' => 'Abhishek M R',
         'designation' => 'Founder & CEO',
         'qualification' => 'M.Com, (Ph.D.)',
-        'experience' => '16+ Years Experience',
+        'experience' => '10+ Years Experience',
         'subjects' => 'Commerce (10th, 1st & 2nd PUC)',
         'image_url' => 'assets/images/Abhishek.jpeg',
         'image_bg' => 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
         'avatar_initials' => 'AM',
         'linkedin_url' => 'https://linkedin.com',
-        'bio' => 'Abhishek M R is a passionate Commerce educator with over 16 years of teaching experience. He is known for simplifying Accounting, Business Studies, and Economics through practical examples and concept-driven learning, helping students build confidence and achieve excellent academic results.',
+        'bio' => 'Abhishek M R is a passionate Commerce educator with over 10 years of teaching experience. He is known for simplifying Accounting, Business Studies, and Economics through practical examples and concept-driven learning, helping students build confidence and achieve excellent academic results.',
         'quote' => 'At Pranamya Tutorials, we believe that education is the most powerful tool for shaping a student\'s future. Our mission is to provide quality education, strengthen conceptual understanding, and inspire confidence in every learner. We focus on building strong fundamentals, encouraging consistent practice, and supporting the overall development of each student. Our dedicated approach ensures that students are well-prepared not only for board examinations but also for future academic and professional success.'
     ],
     [
         'id' => 2,
         'name' => 'Mohammad Rafi',
-        'designation' => 'Co-Founder & Director',
+        'designation' => 'Professor',
         'qualification' => 'M.Sc, B.Ed, K-SET, K-TET',
-        'experience' => '15+ Years Experience',
+        'experience' => '10+ Years Experience',
         'subjects' => 'Science Faculty',
         'image_url' => 'assets/images/Rafi.png',
         'image_bg' => 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%)',
         'avatar_initials' => 'MR',
         'linkedin_url' => 'https://linkedin.com',
-        'bio' => 'Mohammad Rafi is renowned for transforming abstract Science concepts into clear, visual explanations. With 15 years of experience, he specializes in making Physics and Chemistry intuitive, ensuring students don\'t just memorize formulas—they understand the logic behind them.',
+        'bio' => 'Mohammad Rafi is renowned for transforming abstract Science concepts into clear, visual explanations. With 10 years of experience, he specializes in making Physics and Chemistry intuitive, ensuring students don\'t just memorize formulas—they understand the logic behind them.',
         'quote' => 'At Pranamya Tutorials, we believe that science is not just about learning formulas and facts—it\'s about understanding the world through curiosity, observation, and logical thinking. Our goal is to make every concept in Physics, Chemistry, and General Science simple, engaging, and easy to understand.'
     ]
 ];
