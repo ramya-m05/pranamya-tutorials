@@ -196,5 +196,47 @@ $faculty_members = [
         'linkedin_url' => 'https://linkedin.com',
         'bio' => 'Mohammad Rafi is renowned for transforming abstract Science concepts into clear, visual explanations. With 10 years of experience, he specializes in making Physics and Chemistry intuitive, ensuring students don\'t just memorize formulas—they understand the logic behind them.',
         'quote' => 'At Pranamya Tutorials, we believe that science is not just about learning formulas and facts—it\'s about understanding the world through curiosity, observation, and logical thinking. Our goal is to make every concept in Physics, Chemistry, and General Science simple, engaging, and easy to understand.'
-    ]
+    ],
+    [
+        'id' => 3,
+        'name' => 'Dr.Rajanna',
+        'designation' => 'Professor',
+        'qualification' => 'M.A,ph.D.',
+        'experience' => '20+ Years Experience',
+        'subjects' => 'Social Science Faculty',
+        'image_url' => 'assets/images/Rajanna.png',
+        'image_bg' => 'linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%)',
+        'avatar_initials' => 'MR',
+        'linkedin_url' => 'https://linkedin.com',
+        'bio' => 'Dr. Rajanna is an experienced Professor and dedicated Social Science educator with over 20 years of teaching experience. With a strong academic background in M.A., he specializes in making Social Science concepts clear, engaging, and relatable. His teaching approach encourages students to understand history, society, civics, and other social science topics through meaningful examples and critical thinking rather than rote memorization.',
+        'quote' => 'At Pranamya Tutorials, we believe that Social Science is not just about remembering dates, events, and facts—it is about understanding our society, our history, and the world around us. Our goal is to help every student develop curiosity, awareness, and critical thinking while making every concept simple, meaningful, and easy to remember.'
+    ],
+    [
+    'id' => 4,
+    'name' => 'Nandini',
+    'designation' => 'Professor',
+    'qualification' => 'M.Com, (ph.D.)',
+    'experience' => '10 Years Experience',
+    'subjects' => 'Statistics Faculty',
+    'image_url' => 'assets/images/Nandini.png',
+    'image_bg' => 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    'avatar_initials' => 'N',
+    'linkedin_url' => 'https://linkedin.com',
+    'bio' => 'Nandini is an experienced Statistics educator with 10 years of teaching experience, dedicated to making statistical concepts simple, practical, and easy to understand. Her teaching approach focuses on building strong fundamentals, developing analytical thinking, and helping students confidently apply statistical methods to solve problems.',
+    'quote' => 'At Pranamya Tutorials, we believe that Statistics is not just about numbers—it is about understanding data, identifying patterns, and making informed decisions. Our goal is to make every statistical concept clear, practical, and meaningful so that students develop both confidence and analytical thinking.'
+    ],
+    [
+    'id' => 5,
+    'name' => 'Shilpa',
+    'designation' => 'Professor',
+    'qualification' => 'M.Sc.',
+    'experience' => '2 Years Experience',
+    'subjects' => 'Mathematics Faculty',
+    'image_url' => 'assets/images/Shilpa.png',
+    'image_bg' => 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)',
+    'avatar_initials' => 'S',
+    'linkedin_url' => 'https://linkedin.com',
+    'bio' => 'Shilpa is a passionate Mathematics educator with 2 years of teaching experience. She focuses on building strong mathematical fundamentals and helping students approach challenging problems with clarity and confidence. Her student-friendly teaching style makes mathematical concepts easier to understand, practice, and apply.',
+    'quote' => 'At Pranamya Tutorials, we believe that Mathematics is not about memorizing formulas—it is about developing logical thinking, problem-solving skills, and confidence. Our goal is to make every mathematical concept simple, engaging, and approachable for every student.'
+]
 ];
