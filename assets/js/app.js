@@ -64,20 +64,48 @@ function initMobileDrawer() {
 
   if (!menuBtn || !drawer) return;
 
+  function openDrawer() {
+    drawer.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    menuBtn.setAttribute('aria-expanded', 'true');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeDrawer() {
+    drawer.classList.add('hidden');
+    document.body.style.overflow = '';
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }
+
   menuBtn.addEventListener('click', () => {
-    drawer.classList.toggle('hidden');
+    if (drawer.classList.contains('hidden')) {
+      openDrawer();
+    } else {
+      closeDrawer();
+    }
   });
 
   if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      drawer.classList.add('hidden');
-    });
+    closeBtn.addEventListener('click', closeDrawer);
   }
 
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      drawer.classList.add('hidden');
-    });
+    link.addEventListener('click', closeDrawer);
+  });
+
+  // Close on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !drawer.classList.contains('hidden')) {
+      closeDrawer();
+      menuBtn.focus();
+    }
+  });
+
+  // Close on click outside drawer
+  document.addEventListener('click', (e) => {
+    if (!drawer.classList.contains('hidden') && !drawer.contains(e.target) && !menuBtn.contains(e.target)) {
+      closeDrawer();
+    }
   });
 }
 

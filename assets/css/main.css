@@ -34,6 +34,14 @@ html {
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--text-dark);
   background-color: var(--bg-light);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .kannada-text {
@@ -43,31 +51,113 @@ html {
 /* Glassmorphism & Header */
 .nav-glass {
   background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(200, 16, 46, 0.1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Hero Carousel & Height Constraint */
+header.nav-scrolled {
+  background: rgba(255, 255, 255, 0.97) !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.12);
+  border-bottom: 1px solid rgba(200, 16, 46, 0.2);
+}
+
+/* Two-Column Cinematic 3D Hero */
+.hero-cinematic {
+  position: relative;
+  background: radial-gradient(circle at 75% 35%, rgba(200, 16, 46, 0.32) 0%, rgba(15, 23, 42, 0.98) 65%),
+              radial-gradient(circle at 15% 80%, rgba(212, 160, 23, 0.18) 0%, rgba(15, 23, 42, 0.98) 70%),
+              #0B1120;
+  overflow: hidden;
+  color: #FFFFFF;
+}
+
+.hero-cinematic::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    radial-gradient(rgba(212, 160, 23, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hero-3d-wrapper {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 639px) {
+  .hero-3d-wrapper {
+    height: 340px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-3d-wrapper {
+    height: 440px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-3d-wrapper {
+    height: 580px;
+  }
+}
+
+/* 3D Scene Interactive Overlay Badge */
+.hero-3d-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 160, 23, 0.4);
+  color: #FFD700;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* 3D Scene Fallback Graphic (CSS Animated Composition) */
+.hero-3d-fallback-view {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(200, 16, 46, 0.2) 0%, transparent 70%);
+}
+
+.has-fallback .hero-3d-fallback-view {
+  display: flex;
+}
+
+/* Legacy Hero Slider fallback support */
 .hero-container {
   position: relative;
   overflow: hidden;
   width: 100%;
-}
-
-@media (max-width: 767px) {
-  .hero-container {
-    max-height: 380px !important;
-    height: 380px !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero-container {
-    min-height: 520px;
-    height: calc(100vh - 120px);
-    max-height: 650px;
-  }
 }
 
 .hero-slide {
@@ -520,4 +610,182 @@ footer {
   background: linear-gradient(135deg, #FFC72C 0%, #FFA000 100%);
   transform: translateY(-2px);
   box-shadow: 0 12px 25px rgba(255, 184, 0, 0.5);
+}
+
+/* ==========================================================================
+   ENHANCED ANIMATION & INTERACTION SYSTEM
+   ========================================================================== */
+
+/* Card Hover Elevation System */
+.class-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -12px rgba(200, 16, 46, 0.16);
+  border-color: rgba(200, 16, 46, 0.35);
+}
+
+.why-us-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.why-us-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.12);
+  border-color: rgba(212, 160, 23, 0.45);
+}
+
+.fact-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fact-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 184, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(255, 184, 0, 0.18);
+}
+
+/* Admission Process 4-Step Animated Journey */
+.admission-step-node {
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+  border: 3px solid #FFD700;
+  box-shadow: 0 8px 24px rgba(200, 16, 46, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admission-step:hover .admission-step-node {
+  transform: scale(1.1);
+  box-shadow: 0 12px 28px rgba(255, 215, 0, 0.4);
+}
+
+/* FAQ Accordion with 60fps CSS Grid Smooth Height */
+.faq-item {
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  background: #FFFFFF;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover,
+.faq-item.faq-active {
+  border-color: rgba(200, 16, 46, 0.35);
+  box-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.08);
+}
+
+.faq-trigger {
+  width: 100%;
+  min-height: 54px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font: inherit;
+  color: #0F172A;
+  gap: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.faq-trigger:hover {
+  background-color: rgba(248, 250, 252, 0.8);
+}
+
+.faq-trigger:focus-visible {
+  outline: 2px solid var(--primary-red);
+  outline-offset: -2px;
+}
+
+.faq-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--primary-red);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-content.faq-open {
+  grid-template-rows: 1fr;
+}
+
+.faq-inner {
+  overflow: hidden;
+}
+
+.faq-body {
+  padding: 0 22px 20px 22px;
+  color: #475569;
+  font-size: 0.925rem;
+  line-height: 1.65;
+  border-top: 1px dashed #F1F5F9;
+}
+
+/* Form Control Focus and Transitions */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary-red) !important;
+  box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.18) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Touch Targets Standard (Minimum 44px) */
+button, 
+a.btn-primary, 
+a.btn-gold, 
+.bottom-bar-item, 
+.mobile-nav-link,
+.faq-trigger {
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+/* Safe-Area Inset Support */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .fixed-mobile-bottom-bar {
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+  }
+  .bottom-bar-spacer {
+    height: calc(var(--bottom-bar-height) + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* Prefers Reduced Motion Accessibility Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-float,
+  .call-pulse,
+  .whatsapp-pulse,
+  .animate-ping,
+  .marquee-container {
+    animation: none !important;
+  }
+  .hero-slide {
+    transition: none !important;
+  }
 }

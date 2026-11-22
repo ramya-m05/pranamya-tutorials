@@ -34,6 +34,11 @@ require_once __DIR__ . '/../config.php';
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
+  <!-- Three.js 3D & GSAP Motion Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
   <!-- Custom Main CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -96,11 +101,12 @@ require_once __DIR__ . '/../config.php';
         </a>
 
         <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm text-slate-700">
+        <nav class="hidden md:flex items-center space-x-7 font-semibold text-sm text-slate-700">
           <a href="#hero" class="hover:text-red-600 transition-colors py-2 border-b-2 border-transparent hover:border-red-600">Home</a>
           <a href="#classes" class="hover:text-red-600 transition-colors py-2 border-b-2 border-transparent hover:border-red-600">Classes Offered</a>
           <a href="#why-us" class="hover:text-red-600 transition-colors py-2 border-b-2 border-transparent hover:border-red-600">Why Us</a>
           <a href="#faculty" class="hover:text-red-600 transition-colors py-2 border-b-2 border-transparent hover:border-red-600">Our Faculty</a>
+          <a href="#faq" class="hover:text-red-600 transition-colors py-2 border-b-2 border-transparent hover:border-red-600">FAQ</a>
           <a href="#enquiry" class="hover:text-red-600 transition-colors py-2 border-b-2 border-transparent hover:border-red-600">Admissions</a>
         </nav>
 
@@ -133,6 +139,7 @@ require_once __DIR__ . '/../config.php';
         <a href="#classes" class="mobile-nav-link block py-2 border-b border-slate-800/60 hover:text-amber-400">Classes Offered</a>
         <a href="#why-us" class="mobile-nav-link block py-2 border-b border-slate-800/60 hover:text-amber-400">Why Choose Us</a>
         <a href="#faculty" class="mobile-nav-link block py-2 border-b border-slate-800/60 hover:text-amber-400">Faculty Team</a>
+        <a href="#faq" class="mobile-nav-link block py-2 border-b border-slate-800/60 hover:text-amber-400">FAQ &amp; Answers</a>
         <a href="#enquiry" class="mobile-nav-link block py-2 border-b border-slate-800/60 hover:text-amber-400">Enquiry & Admissions</a>
         <div class="pt-4 flex flex-col gap-3">
           <a href="tel:91<?php echo PRIMARY_PHONE; ?>" class="btn-gold w-full text-center text-sm py-3 justify-center">

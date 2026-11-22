@@ -47,6 +47,9 @@
           <a href="#faculty" class="hover:text-amber-400 transition flex items-center gap-1">
             <i data-lucide="chevron-right" class="w-3 h-3 text-red-500"></i> Faculty Team
           </a>
+          <a href="#faq" class="hover:text-amber-400 transition flex items-center gap-1">
+            <i data-lucide="chevron-right" class="w-3 h-3 text-red-500"></i> FAQ
+          </a>
           <a href="#enquiry" class="hover:text-amber-400 transition flex items-center gap-1">
             <i data-lucide="chevron-right" class="w-3 h-3 text-red-500"></i> Admission Form
           </a>
