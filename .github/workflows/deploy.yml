@@ -25,6 +25,7 @@ jobs:
           protocol: ftps
           timeout: 600000
           exclude: |
+            **/data/enquiries.json
             **/.git*
             **/.git*/**
             **/node_modules/**
